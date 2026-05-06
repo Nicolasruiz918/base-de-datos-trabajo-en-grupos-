@@ -1,0 +1,101 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 028-ddl-views-001-v-habitaciones-disponibilidad
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/04_views/001_v_habitaciones_disponibilidad.sql
+      labels: "ddl,views"
+      comment: Ejecuta 01_ddl/04_views/001_v_habitaciones_disponibilidad.sql.
+      changes:
+        - sqlFile:
+            path: 001_v_habitaciones_disponibilidad.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/04_views/001_v_habitaciones_disponibilidad.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 029-ddl-views-002-v-reservas-detalle
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/04_views/002_v_reservas_detalle.sql
+      labels: "ddl,views"
+      comment: Ejecuta 01_ddl/04_views/002_v_reservas_detalle.sql.
+      changes:
+        - sqlFile:
+            path: 002_v_reservas_detalle.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/04_views/002_v_reservas_detalle.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 030-ddl-views-003-v-facturacion-estadia
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/04_views/003_v_facturacion_estadia.sql
+      labels: "ddl,views"
+      comment: Ejecuta 01_ddl/04_views/003_v_facturacion_estadia.sql.
+      changes:
+        - sqlFile:
+            path: 003_v_facturacion_estadia.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/04_views/003_v_facturacion_estadia.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 031-ddl-views-004-v-usuarios-roles
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/04_views/004_v_usuarios_roles.sql
+      labels: "ddl,views"
+      comment: Ejecuta 01_ddl/04_views/004_v_usuarios_roles.sql.
+      changes:
+        - sqlFile:
+            path: 004_v_usuarios_roles.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/04_views/004_v_usuarios_roles.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 032-ddl-views-005-v-dashboard-mantenimiento-actual
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/04_views/005_v_dashboard_mantenimiento_actual.sql
+      labels: "ddl,views"
+      comment: Ejecuta 01_ddl/04_views/005_v_dashboard_mantenimiento_actual.sql.
+      changes:
+        - sqlFile:
+            path: 005_v_dashboard_mantenimiento_actual.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/04_views/005_v_dashboard_mantenimiento_actual.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

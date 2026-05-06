@@ -1,0 +1,21 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 045-dml-deletes-001-eliminacion-logica-demo
+      author: sistema-hotelero
+      logicalFilePath: 02_dml/02_deletes/001_eliminacion_logica_demo.sql
+      labels: "dml,deletes"
+      comment: Ejecuta 02_dml/02_deletes/001_eliminacion_logica_demo.sql.
+      changes:
+        - sqlFile:
+            path: 001_eliminacion_logica_demo.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/02_deletes/001_eliminacion_logica_demo.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

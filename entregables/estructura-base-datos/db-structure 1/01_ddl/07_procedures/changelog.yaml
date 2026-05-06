@@ -1,0 +1,101 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 017-ddl-procedures-001-sp-crear-reserva
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/07_procedures/001_sp_crear_reserva.sql
+      labels: "ddl,procedures"
+      comment: Ejecuta 01_ddl/07_procedures/001_sp_crear_reserva.sql.
+      changes:
+        - sqlFile:
+            path: 001_sp_crear_reserva.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/07_procedures/001_sp_crear_reserva.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 018-ddl-procedures-002-sp-soft-delete
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/07_procedures/002_sp_soft_delete.sql
+      labels: "ddl,procedures"
+      comment: Ejecuta 01_ddl/07_procedures/002_sp_soft_delete.sql.
+      changes:
+        - sqlFile:
+            path: 002_sp_soft_delete.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/07_procedures/002_sp_soft_delete.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 019-ddl-procedures-003-sp-registrar-entrada-producto
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/07_procedures/003_sp_registrar_entrada_producto.sql
+      labels: "ddl,procedures"
+      comment: Ejecuta 01_ddl/07_procedures/003_sp_registrar_entrada_producto.sql.
+      changes:
+        - sqlFile:
+            path: 003_sp_registrar_entrada_producto.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/07_procedures/003_sp_registrar_entrada_producto.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 020-ddl-procedures-004-sp-emitir-factura
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/07_procedures/004_sp_emitir_factura.sql
+      labels: "ddl,procedures"
+      comment: Ejecuta 01_ddl/07_procedures/004_sp_emitir_factura.sql.
+      changes:
+        - sqlFile:
+            path: 004_sp_emitir_factura.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/07_procedures/004_sp_emitir_factura.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 021-ddl-procedures-005-sp-cerrar-mantenimiento
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/07_procedures/005_sp_cerrar_mantenimiento.sql
+      labels: "ddl,procedures"
+      comment: Ejecuta 01_ddl/07_procedures/005_sp_cerrar_mantenimiento.sql.
+      changes:
+        - sqlFile:
+            path: 005_sp_cerrar_mantenimiento.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/07_procedures/005_sp_cerrar_mantenimiento.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

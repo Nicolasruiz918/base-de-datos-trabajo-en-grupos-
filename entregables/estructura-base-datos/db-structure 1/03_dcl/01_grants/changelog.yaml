@@ -1,0 +1,21 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 049-dcl-grants-001-grants
+      author: sistema-hotelero
+      logicalFilePath: 03_dcl/01_grants/001_grants.sql
+      labels: "dcl,grants"
+      comment: Ejecuta 03_dcl/01_grants/001_grants.sql.
+      changes:
+        - sqlFile:
+            path: 001_grants.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/03_dcl/01_grants/001_grants.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

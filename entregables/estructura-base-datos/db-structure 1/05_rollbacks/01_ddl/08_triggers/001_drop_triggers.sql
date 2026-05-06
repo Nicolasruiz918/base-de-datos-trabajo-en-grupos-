@@ -1,0 +1,14 @@
+﻿DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.cliente;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.persona;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.empresa;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.tipo_dia;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.metodo_pago;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.informacion_legal;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.empleado;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.precio;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON distribucion.habitacion;
+DROP TRIGGER IF EXISTS trg_habitacion_capacidad ON distribucion.habitacion;
+DROP TRIGGER IF EXISTS trg_reserva_no_solapada ON prestacion_servicio.reserva_habitacion;
+DROP TRIGGER IF EXISTS trg_venta_producto_stock ON inventario.venta_producto;
+DROP TRIGGER IF EXISTS trg_pre_factura_total ON facturacion.pre_factura;
+DROP TRIGGER IF EXISTS trg_factura_total ON facturacion.factura;

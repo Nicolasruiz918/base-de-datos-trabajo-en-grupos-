@@ -1,0 +1,41 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 033-ddl-materialized-views-001-mv-ingresos-por-mes
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/05_materialized_views/001_mv_ingresos_por_mes.sql
+      labels: "ddl,materialized-views"
+      comment: Ejecuta 01_ddl/05_materialized_views/001_mv_ingresos_por_mes.sql.
+      changes:
+        - sqlFile:
+            path: 001_mv_ingresos_por_mes.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/05_materialized_views/001_mv_ingresos_por_mes.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 034-ddl-materialized-views-002-mv-ocupacion-por-sede
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/05_materialized_views/002_mv_ocupacion_por_sede.sql
+      labels: "ddl,materialized-views"
+      comment: Ejecuta 01_ddl/05_materialized_views/002_mv_ocupacion_por_sede.sql.
+      changes:
+        - sqlFile:
+            path: 002_mv_ocupacion_por_sede.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/05_materialized_views/002_mv_ocupacion_por_sede.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

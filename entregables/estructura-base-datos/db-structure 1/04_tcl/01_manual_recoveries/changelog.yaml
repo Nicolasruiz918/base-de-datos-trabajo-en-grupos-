@@ -1,0 +1,21 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 052-tcl-manual-recoveries-001-refresh-materialized-views
+      author: sistema-hotelero
+      logicalFilePath: 04_tcl/01_manual_recoveries/001_refresh_materialized_views.sql
+      labels: "tcl,manual-recoveries"
+      comment: Ejecuta 04_tcl/01_manual_recoveries/001_refresh_materialized_views.sql.
+      changes:
+        - sqlFile:
+            path: 001_refresh_materialized_views.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/04_tcl/01_manual_recoveries/001_refresh_materialized_views.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

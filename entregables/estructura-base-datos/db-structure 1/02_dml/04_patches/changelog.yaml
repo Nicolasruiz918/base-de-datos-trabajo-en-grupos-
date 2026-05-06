@@ -1,0 +1,21 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 047-dml-patches-001-patch-refresh-reportes
+      author: sistema-hotelero
+      logicalFilePath: 02_dml/04_patches/001_patch_refresh_reportes.sql
+      labels: "dml,patches"
+      comment: Ejecuta 02_dml/04_patches/001_patch_refresh_reportes.sql.
+      changes:
+        - sqlFile:
+            path: 001_patch_refresh_reportes.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/04_patches/001_patch_refresh_reportes.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

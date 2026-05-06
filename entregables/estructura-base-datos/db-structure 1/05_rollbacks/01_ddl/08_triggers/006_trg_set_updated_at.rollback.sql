@@ -1,0 +1,9 @@
+﻿DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.cliente;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.persona;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.empresa;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.tipo_dia;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.metodo_pago;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.informacion_legal;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.empleado;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.precio;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON distribucion.habitacion;

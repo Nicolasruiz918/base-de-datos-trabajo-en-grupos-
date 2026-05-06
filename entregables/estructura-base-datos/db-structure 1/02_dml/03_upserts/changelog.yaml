@@ -1,0 +1,21 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 046-dml-upserts-001-upsert-catalogos
+      author: sistema-hotelero
+      logicalFilePath: 02_dml/03_upserts/001_upsert_catalogos.sql
+      labels: "dml,upserts"
+      comment: Ejecuta 02_dml/03_upserts/001_upsert_catalogos.sql.
+      changes:
+        - sqlFile:
+            path: 001_upsert_catalogos.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/03_upserts/001_upsert_catalogos.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

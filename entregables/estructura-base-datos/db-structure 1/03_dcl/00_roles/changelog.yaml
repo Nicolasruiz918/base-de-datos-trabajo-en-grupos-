@@ -1,0 +1,21 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 048-dcl-roles-001-roles
+      author: sistema-hotelero
+      logicalFilePath: 03_dcl/00_roles/001_roles.sql
+      labels: "dcl,roles"
+      comment: Ejecuta 03_dcl/00_roles/001_roles.sql.
+      changes:
+        - sqlFile:
+            path: 001_roles.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/03_dcl/00_roles/001_roles.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

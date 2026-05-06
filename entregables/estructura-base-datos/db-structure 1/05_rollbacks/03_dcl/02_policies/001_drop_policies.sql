@@ -1,0 +1,12 @@
+﻿DROP POLICY IF EXISTS pol_cliente_admin_all ON parametrizacion.cliente;
+DROP POLICY IF EXISTS pol_persona_admin_all ON parametrizacion.persona;
+DROP POLICY IF EXISTS pol_usuario_admin_all ON seguridad.usuario;
+DROP POLICY IF EXISTS pol_factura_admin_all ON facturacion.factura;
+DROP POLICY IF EXISTS pol_pago_admin_all ON facturacion.pago_parcial;
+DROP POLICY IF EXISTS pol_cliente_desarrollador_all ON parametrizacion.cliente;
+DROP POLICY IF EXISTS pol_persona_desarrollador_all ON parametrizacion.persona;
+DROP POLICY IF EXISTS pol_usuario_desarrollador_read ON seguridad.usuario;
+DROP POLICY IF EXISTS pol_factura_desarrollador_all ON facturacion.factura;
+DROP POLICY IF EXISTS pol_pago_desarrollador_all ON facturacion.pago_parcial;
+DROP POLICY IF EXISTS pol_cliente_qa_read ON parametrizacion.cliente;
+DROP POLICY IF EXISTS pol_factura_qa_read ON facturacion.factura;

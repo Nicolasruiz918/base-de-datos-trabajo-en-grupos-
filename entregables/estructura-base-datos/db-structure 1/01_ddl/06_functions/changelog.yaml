@@ -1,0 +1,101 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 012-ddl-functions-001-fn-set-updated-at
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/06_functions/001_fn_set_updated_at.sql
+      labels: "ddl,functions"
+      comment: Ejecuta 01_ddl/06_functions/001_fn_set_updated_at.sql.
+      changes:
+        - sqlFile:
+            path: 001_fn_set_updated_at.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/06_functions/001_fn_set_updated_at.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 013-ddl-functions-002-fn-calcular-noches
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/06_functions/002_fn_calcular_noches.sql
+      labels: "ddl,functions"
+      comment: Ejecuta 01_ddl/06_functions/002_fn_calcular_noches.sql.
+      changes:
+        - sqlFile:
+            path: 002_fn_calcular_noches.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/06_functions/002_fn_calcular_noches.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 014-ddl-functions-003-fn-calcular-total
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/06_functions/003_fn_calcular_total.sql
+      labels: "ddl,functions"
+      comment: Ejecuta 01_ddl/06_functions/003_fn_calcular_total.sql.
+      changes:
+        - sqlFile:
+            path: 003_fn_calcular_total.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/06_functions/003_fn_calcular_total.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 015-ddl-functions-004-fn-calcular-precio-reserva
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/06_functions/004_fn_calcular_precio_reserva.sql
+      labels: "ddl,functions"
+      comment: Ejecuta 01_ddl/06_functions/004_fn_calcular_precio_reserva.sql.
+      changes:
+        - sqlFile:
+            path: 004_fn_calcular_precio_reserva.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/06_functions/004_fn_calcular_precio_reserva.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 016-ddl-functions-005-fn-stock-disponible
+      author: sistema-hotelero
+      logicalFilePath: 01_ddl/06_functions/005_fn_stock_disponible.sql
+      labels: "ddl,functions"
+      comment: Ejecuta 01_ddl/06_functions/005_fn_stock_disponible.sql.
+      changes:
+        - sqlFile:
+            path: 005_fn_stock_disponible.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/06_functions/005_fn_stock_disponible.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

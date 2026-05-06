@@ -1,0 +1,2 @@
+﻿-- Ejemplo de eliminacion logica. Ajustar el ID segun la necesidad real.
+-- CALL seguridad.sp_soft_delete('notificacion', 'alerta', 1, NULL);
