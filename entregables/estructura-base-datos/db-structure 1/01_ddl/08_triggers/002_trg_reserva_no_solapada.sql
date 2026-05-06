@@ -18,7 +18,7 @@ BEGIN
     SELECT 1
     FROM prestacion_servicio.reserva_habitacion r
     WHERE r.habitacion_id = NEW.habitacion_id
-      AND r.id <> COALESCE(NEW.id, -1)
+      AND r.id IS DISTINCT FROM NEW.id
       AND r.status = 'ACTIVE'
       AND r.estado_reserva NOT IN ('CANCELADA', 'FINALIZADA')
       AND tstzrange(r.fecha_inicio, r.fecha_fin, '[)') && tstzrange(NEW.fecha_inicio, NEW.fecha_fin, '[)')
@@ -36,3 +36,4 @@ BEFORE INSERT OR UPDATE OF habitacion_id, fecha_inicio, fecha_fin, estado_reserv
 ON prestacion_servicio.reserva_habitacion
 FOR EACH ROW
 EXECUTE FUNCTION prestacion_servicio.fn_validar_reserva_habitacion();
+

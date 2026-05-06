@@ -66,16 +66,5 @@ CREATE UNIQUE INDEX IF NOT EXISTS ux_mv_ingresos_por_mes ON facturacion.mv_ingre
 CREATE UNIQUE INDEX IF NOT EXISTS ux_mv_ocupacion_por_sede ON distribucion.mv_ocupacion_por_sede (sede_id);
 
 
-DO $$
-BEGIN
-  IF NOT EXISTS (
-    SELECT 1
-    FROM pg_constraint
-    WHERE conname = 'fk_precio_tipo_habitacion'
-      AND conrelid = 'parametrizacion.precio'::regclass
-  ) THEN
-    ALTER TABLE parametrizacion.precio
-      ADD CONSTRAINT fk_precio_tipo_habitacion
-      FOREIGN KEY (tipo_habitacion_id) REFERENCES distribucion.tipo_habitacion(id);
-  END IF;
-END $$;
+
+

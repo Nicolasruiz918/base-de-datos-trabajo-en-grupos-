@@ -1,4 +1,4 @@
-﻿SET search_path TO parametrizacion;
+﻿SET search_path TO parametrizacion, public;
 
 CREATE TABLE IF NOT EXISTS cliente (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS metodo_pago (
 
 CREATE TABLE IF NOT EXISTS informacion_legal (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  empresa_id UUID NOT NULL REFERENCES parametrizacion.empresa(id),
+  empresa_id UUID NOT NULL,
   tipo_documento_legal VARCHAR(80) NOT NULL,
   numero_documento_legal VARCHAR(80) NOT NULL,
   descripcion TEXT,
@@ -99,12 +99,13 @@ CREATE TABLE IF NOT EXISTS informacion_legal (
   updated_at TIMESTAMPTZ,
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
-  status parametrizacion.record_status NOT NULL DEFAULT 'ACTIVE'
+  status parametrizacion.record_status NOT NULL DEFAULT 'ACTIVE',
+  CONSTRAINT fk_informacion_legal_empresa FOREIGN KEY (empresa_id) REFERENCES parametrizacion.empresa(id)
 );
 
 CREATE TABLE IF NOT EXISTS empleado (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  persona_id UUID NOT NULL REFERENCES parametrizacion.persona(id),
+  persona_id UUID NOT NULL,
   cargo VARCHAR(100) NOT NULL,
   fecha_ingreso DATE NOT NULL,
   telefono_laboral VARCHAR(40),
@@ -115,14 +116,14 @@ CREATE TABLE IF NOT EXISTS empleado (
   updated_at TIMESTAMPTZ,
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
-  status parametrizacion.record_status NOT NULL DEFAULT 'ACTIVE'
+  status parametrizacion.record_status NOT NULL DEFAULT 'ACTIVE',
+  CONSTRAINT fk_empleado_persona FOREIGN KEY (persona_id) REFERENCES parametrizacion.persona(id)
 );
-
 
 CREATE TABLE IF NOT EXISTS precio (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   tipo_habitacion_id UUID NOT NULL,
-  tipo_dia_id UUID NOT NULL REFERENCES parametrizacion.tipo_dia(id),
+  tipo_dia_id UUID NOT NULL,
   valor NUMERIC(12,2) NOT NULL,
   fecha_inicio DATE NOT NULL,
   fecha_fin DATE,
@@ -135,5 +136,7 @@ CREATE TABLE IF NOT EXISTS precio (
   deleted_at TIMESTAMPTZ,
   status parametrizacion.record_status NOT NULL DEFAULT 'ACTIVE',
   CONSTRAINT ck_precio_valor CHECK (valor >= 0),
-  CONSTRAINT ck_precio_fechas CHECK (fecha_fin IS NULL OR fecha_fin >= fecha_inicio)
+  CONSTRAINT ck_precio_fechas CHECK (fecha_fin IS NULL OR fecha_fin >= fecha_inicio),
+  CONSTRAINT fk_precio_tipo_dia FOREIGN KEY (tipo_dia_id) REFERENCES parametrizacion.tipo_dia(id)
 );
+
