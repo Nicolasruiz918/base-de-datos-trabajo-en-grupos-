@@ -106,7 +106,7 @@ El schema indica el dominio. La tabla indica la entidad.
 ## Consecuencias
 
 - La documentacion sigue en espanol para que sea clara para el equipo.
-- La base de datos tiene un idioma tecnico objetivo: ingles.
+- La base de datos queda convertida al idioma tecnico ingles.
 - No se deben mezclar nombres antiguos y nuevos dentro de una misma ejecucion.
 - El cambio fisico de nombres debe aplicarse como refactor integral para no romper ejecucion.
 - Las HU y documentos deben indicar los dominios funcionales en espanol, aunque el schema tecnico pueda quedar en ingles.
@@ -123,6 +123,7 @@ Para considerar cumplida esta decision en una version ya convertida:
 
 ## Impacto en la entrega
 
-Este ADR documenta la decision de idioma tecnico. Si la entrega ya tiene scripts en espanol, no se debe cambiar solo un archivo aislado: se debe hacer la conversion completa para conservar funcionamiento.
+Este ADR documenta y respalda la decision de idioma tecnico. La entrega aplica la conversion integral: DDL, DML, DCL, TCL, rollbacks, changelogs y smoke test usan los nombres tecnicos en ingles.
 
 La decision queda registrada para que el equipo sepa que el objetivo tecnico de la base es ingles y que la documentacion puede seguir escrita en espanol.
+

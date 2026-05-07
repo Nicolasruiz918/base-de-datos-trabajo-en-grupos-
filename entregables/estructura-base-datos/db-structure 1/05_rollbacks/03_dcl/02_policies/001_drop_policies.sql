@@ -1,12 +1,14 @@
-﻿DROP POLICY IF EXISTS pol_cliente_admin_all ON parametrizacion.cliente;
-DROP POLICY IF EXISTS pol_persona_admin_all ON parametrizacion.persona;
-DROP POLICY IF EXISTS pol_usuario_admin_all ON seguridad.usuario;
-DROP POLICY IF EXISTS pol_factura_admin_all ON facturacion.factura;
-DROP POLICY IF EXISTS pol_pago_admin_all ON facturacion.pago_parcial;
-DROP POLICY IF EXISTS pol_cliente_desarrollador_all ON parametrizacion.cliente;
-DROP POLICY IF EXISTS pol_persona_desarrollador_all ON parametrizacion.persona;
-DROP POLICY IF EXISTS pol_usuario_desarrollador_read ON seguridad.usuario;
-DROP POLICY IF EXISTS pol_factura_desarrollador_all ON facturacion.factura;
-DROP POLICY IF EXISTS pol_pago_desarrollador_all ON facturacion.pago_parcial;
-DROP POLICY IF EXISTS pol_cliente_qa_read ON parametrizacion.cliente;
-DROP POLICY IF EXISTS pol_factura_qa_read ON facturacion.factura;
+﻿DROP POLICY IF EXISTS pol_customer_admin_all ON configuration.customer;
+DROP POLICY IF EXISTS pol_person_admin_all ON configuration.person;
+DROP POLICY IF EXISTS pol_user_account_admin_all ON security.user_account;
+DROP POLICY IF EXISTS pol_invoice_admin_all ON billing.invoice;
+DROP POLICY IF EXISTS pol_payment_admin_all ON billing.partial_payment;
+DROP POLICY IF EXISTS pol_customer_developer_all ON configuration.customer;
+DROP POLICY IF EXISTS pol_person_developer_all ON configuration.person;
+DROP POLICY IF EXISTS pol_user_account_developer_read ON security.user_account;
+DROP POLICY IF EXISTS pol_invoice_developer_all ON billing.invoice;
+DROP POLICY IF EXISTS pol_payment_developer_all ON billing.partial_payment;
+DROP POLICY IF EXISTS pol_customer_qa_read ON configuration.customer;
+DROP POLICY IF EXISTS pol_invoice_qa_read ON billing.invoice;
+
+

@@ -1,161 +1,163 @@
 ﻿databaseChangeLog:
   - changeSet:
-      id: 004-ddl-tables-001-parametrizacion
+      id: 004-ddl-tables-001-configuration
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/03_tables/001_parametrizacion.sql
+      logicalFilePath: 01_ddl/03_tables/001_configuration.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/001_parametrizacion.sql.
+      comment: Ejecuta 01_ddl/03_tables/001_configuration.sql.
       changes:
         - sqlFile:
-            path: 001_parametrizacion.sql
+            path: 001_configuration.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/03_tables/001_parametrizacion.rollback.sql
+            path: ../../05_rollbacks/01_ddl/03_tables/001_configuration.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 005-ddl-tables-002-seguridad
+      id: 005-ddl-tables-002-security
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/03_tables/002_seguridad.sql
+      logicalFilePath: 01_ddl/03_tables/002_security.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/002_seguridad.sql.
+      comment: Ejecuta 01_ddl/03_tables/002_security.sql.
       changes:
         - sqlFile:
-            path: 002_seguridad.sql
+            path: 002_security.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/03_tables/002_seguridad.rollback.sql
+            path: ../../05_rollbacks/01_ddl/03_tables/002_security.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 006-ddl-tables-003-distribucion
+      id: 006-ddl-tables-003-distribution
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/03_tables/003_distribucion.sql
+      logicalFilePath: 01_ddl/03_tables/003_distribution.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/003_distribucion.sql.
+      comment: Ejecuta 01_ddl/03_tables/003_distribution.sql.
       changes:
         - sqlFile:
-            path: 003_distribucion.sql
+            path: 003_distribution.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/03_tables/003_distribucion.rollback.sql
+            path: ../../05_rollbacks/01_ddl/03_tables/003_distribution.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 007-ddl-tables-004-prestacion-servicio
+      id: 007-ddl-tables-004-service-delivery
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/03_tables/004_prestacion_servicio.sql
+      logicalFilePath: 01_ddl/03_tables/004_service_delivery.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/004_prestacion_servicio.sql.
+      comment: Ejecuta 01_ddl/03_tables/004_service_delivery.sql.
       changes:
         - sqlFile:
-            path: 004_prestacion_servicio.sql
+            path: 004_service_delivery.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/03_tables/004_prestacion_servicio.rollback.sql
+            path: ../../05_rollbacks/01_ddl/03_tables/004_service_delivery.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 008-ddl-tables-005-inventario
+      id: 008-ddl-tables-005-inventory
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/03_tables/005_inventario.sql
+      logicalFilePath: 01_ddl/03_tables/005_inventory.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/005_inventario.sql.
+      comment: Ejecuta 01_ddl/03_tables/005_inventory.sql.
       changes:
         - sqlFile:
-            path: 005_inventario.sql
+            path: 005_inventory.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/03_tables/005_inventario.rollback.sql
+            path: ../../05_rollbacks/01_ddl/03_tables/005_inventory.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 009-ddl-tables-006-facturacion
+      id: 009-ddl-tables-006-billing
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/03_tables/006_facturacion.sql
+      logicalFilePath: 01_ddl/03_tables/006_billing.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/006_facturacion.sql.
+      comment: Ejecuta 01_ddl/03_tables/006_billing.sql.
       changes:
         - sqlFile:
-            path: 006_facturacion.sql
+            path: 006_billing.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/03_tables/006_facturacion.rollback.sql
+            path: ../../05_rollbacks/01_ddl/03_tables/006_billing.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 010-ddl-tables-007-notificacion
+      id: 010-ddl-tables-007-notification
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/03_tables/007_notificacion.sql
+      logicalFilePath: 01_ddl/03_tables/007_notification.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/007_notificacion.sql.
+      comment: Ejecuta 01_ddl/03_tables/007_notification.sql.
       changes:
         - sqlFile:
-            path: 007_notificacion.sql
+            path: 007_notification.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/03_tables/007_notificacion.rollback.sql
+            path: ../../05_rollbacks/01_ddl/03_tables/007_notification.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 011-ddl-tables-008-mantenimiento
+      id: 011-ddl-tables-008-maintenance
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/03_tables/008_mantenimiento.sql
+      logicalFilePath: 01_ddl/03_tables/008_maintenance.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/008_mantenimiento.sql.
+      comment: Ejecuta 01_ddl/03_tables/008_maintenance.sql.
       changes:
         - sqlFile:
-            path: 008_mantenimiento.sql
+            path: 008_maintenance.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/03_tables/008_mantenimiento.rollback.sql
+            path: ../../05_rollbacks/01_ddl/03_tables/008_maintenance.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
+
+

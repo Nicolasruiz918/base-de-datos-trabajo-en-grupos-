@@ -1,7 +1,9 @@
-﻿DROP TYPE IF EXISTS mantenimiento.estado_mantenimiento CASCADE;
-DROP TYPE IF EXISTS notificacion.canal_notificacion CASCADE;
-DROP TYPE IF EXISTS inventario.tipo_movimiento_inventario CASCADE;
-DROP TYPE IF EXISTS facturacion.estado_factura CASCADE;
-DROP TYPE IF EXISTS prestacion_servicio.estado_estadia CASCADE;
-DROP TYPE IF EXISTS prestacion_servicio.estado_reserva CASCADE;
-DROP TYPE IF EXISTS parametrizacion.record_status CASCADE;
+﻿DROP TYPE IF EXISTS maintenance.maintenance_status CASCADE;
+DROP TYPE IF EXISTS notification.notification_channel CASCADE;
+DROP TYPE IF EXISTS inventory.inventory_movement_type CASCADE;
+DROP TYPE IF EXISTS billing.invoice_status CASCADE;
+DROP TYPE IF EXISTS service_delivery.stay_status CASCADE;
+DROP TYPE IF EXISTS service_delivery.reservationtion_status CASCADE;
+DROP TYPE IF EXISTS configuration.record_status CASCADE;
+
+

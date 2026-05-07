@@ -1,4 +1,0 @@
-﻿-- REFRESH MATERIALIZED VIEW no requiere rollback de datos.
--- Si se requiere limpiar reportes materializados, usar:
--- REFRESH MATERIALIZED VIEW facturacion.mv_ingresos_por_mes WITH NO DATA;
--- REFRESH MATERIALIZED VIEW distribucion.mv_ocupacion_por_sede WITH NO DATA;

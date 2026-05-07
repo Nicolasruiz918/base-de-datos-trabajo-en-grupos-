@@ -1,1 +1,0 @@
-﻿DROP PROCEDURE IF EXISTS prestacion_servicio.sp_crear_reserva(UUID, UUID, TIMESTAMPTZ, TIMESTAMPTZ, SMALLINT);

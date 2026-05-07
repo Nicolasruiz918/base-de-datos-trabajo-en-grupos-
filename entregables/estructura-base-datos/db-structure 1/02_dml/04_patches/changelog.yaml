@@ -2,20 +2,22 @@
   - changeSet:
       id: 047-dml-patches-001-patch-refresh-reportes
       author: sistema-hotelero
-      logicalFilePath: 02_dml/04_patches/001_patch_refresh_reportes.sql
+      logicalFilePath: 02_dml/04_patches/001_patch_refresh_reports.sql
       labels: "dml,patches"
-      comment: Ejecuta 02_dml/04_patches/001_patch_refresh_reportes.sql.
+      comment: Ejecuta 02_dml/04_patches/001_patch_refresh_reports.sql.
       changes:
         - sqlFile:
-            path: 001_patch_refresh_reportes.sql
+            path: 001_patch_refresh_reports.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/02_dml/04_patches/001_patch_refresh_reportes.rollback.sql
+            path: ../../05_rollbacks/02_dml/04_patches/001_patch_refresh_reports.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
+
+

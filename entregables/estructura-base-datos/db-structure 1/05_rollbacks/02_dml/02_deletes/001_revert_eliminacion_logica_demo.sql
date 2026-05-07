@@ -1,4 +1,0 @@
-﻿-- La HU de deletes usa eliminacion logica por procedimiento.
--- La reversa puntual debe reactivar el registro afectado cuando se conozca schema, tabla e id.
--- Ejemplo:
--- UPDATE notificacion.alerta SET status = 'ACTIVE', deleted_at = NULL, deleted_by = NULL WHERE id = 1;

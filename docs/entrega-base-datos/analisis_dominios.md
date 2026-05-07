@@ -20,14 +20,14 @@ La entrega conserva 8 dominios oficiales. No se crea un dominio tecnico adiciona
 
 | # | Dominio | Schema PostgreSQL | Archivo DDL | Proposito |
 |---|---------|-------------------|-------------|-----------|
-| 1 | Parametrizacion | `parametrizacion` | `01_ddl/03_tables/001_parametrizacion.sql` | Centraliza datos maestros: clientes, personas, empresa, empleados, metodos de pago, tipos de dia y precios. |
-| 2 | Seguridad | `seguridad` | `01_ddl/03_tables/002_seguridad.sql` | Gestiona usuarios, roles, permisos, modulos, vistas y relaciones de acceso. |
-| 3 | Distribucion | `distribucion` | `01_ddl/03_tables/003_distribucion.sql` | Organiza sedes, habitaciones, tipos, estados, catalogo y disponibilidad. |
-| 4 | Prestacion de servicio | `prestacion_servicio` | `01_ddl/03_tables/004_prestacion_servicio.sql` | Controla reservas, cancelaciones, estadias, check in y check out. |
-| 5 | Inventario | `inventario` | `01_ddl/03_tables/005_inventario.sql` | Administra proveedores, productos, servicios, ventas, seguimiento y disponibilidad de inventario. |
-| 6 | Facturacion | `facturacion` | `01_ddl/03_tables/006_facturacion.sql` | Maneja pre factura, factura, pagos parciales y detalle de compra. |
-| 7 | Notificacion | `notificacion` | `01_ddl/03_tables/007_notificacion.sql` | Agrupa promociones, alertas, terminos, condiciones y fidelizacion. |
-| 8 | Mantenimiento | `mantenimiento` | `01_ddl/03_tables/008_mantenimiento.sql` | Registra mantenimiento de habitacion, uso, remodelacion y dashboard operativo. |
+| 1 | Parametrizacion | `configuration` | `01_ddl/03_tables/001_configuration.sql` | Centraliza datos maestros: clientes, personas, empresa, empleados, metodos de pago, tipos de dia y precios. |
+| 2 | Seguridad | `security` | `01_ddl/03_tables/002_security.sql` | Gestiona usuarios, roles, permisos, modulos, vistas y relaciones de acceso. |
+| 3 | Distribucion | `distribution` | `01_ddl/03_tables/003_distribution.sql` | Organiza sedes, habitaciones, tipos, estados, catalogo y disponibilidad. |
+| 4 | Prestacion de servicio | `service_delivery` | `01_ddl/03_tables/004_service_delivery.sql` | Controla reservas, cancelaciones, estadias, check in y check out. |
+| 5 | Inventario | `inventory` | `01_ddl/03_tables/005_inventory.sql` | Administra proveedores, productos, servicios, ventas, seguimiento y disponibilidad de inventario. |
+| 6 | Facturacion | `billing` | `01_ddl/03_tables/006_billing.sql` | Maneja pre factura, factura, pagos parciales y detalle de compra. |
+| 7 | Notificacion | `notification` | `01_ddl/03_tables/007_notification.sql` | Agrupa promociones, alertas, terminos, condiciones y fidelizacion. |
+| 8 | Mantenimiento | `maintenance` | `01_ddl/03_tables/008_maintenance.sql` | Registra mantenimiento de habitacion, uso, remodelacion y dashboard operativo. |
 
 ## Tablas relacionadas por dominio
 
@@ -160,7 +160,7 @@ Notificacion y mantenimiento se mantienen separados porque responden a responsab
 
 ### Configuracion tecnica
 
-No se crea `01_ddl/10_configuration` ni schema `common`. Los tipos y elementos compartidos se ubican dentro de los dominios oficiales, principalmente en `parametrizacion` cuando aplican a datos maestros.
+No se crea `01_ddl/10_configuration` ni schema `common`. Los tipos y elementos compartidos se ubican dentro de los dominios oficiales, principalmente en `configuration` cuando aplican a datos maestros.
 
 ## Reglas de consistencia
 
@@ -205,4 +205,5 @@ WHERE schema_name IN (
 ```
 
 El resultado esperado para `schemas_oficiales` es `8`.
+
 

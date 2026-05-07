@@ -1,23 +1,25 @@
 ﻿DO $$
 BEGIN
-  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'administrador') THEN
-    CREATE ROLE administrador NOLOGIN;
+  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolename = 'administrator') THEN
+    CREATE ROLE administrator NOLOGIN;
   END IF;
 
-  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'desarrollador') THEN
-    CREATE ROLE desarrollador NOLOGIN;
+  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolename = 'developer') THEN
+    CREATE ROLE developer NOLOGIN;
   END IF;
 
-  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'qa') THEN
+  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolename = 'qa') THEN
     CREATE ROLE qa NOLOGIN;
   END IF;
 
-  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'ariel5253') THEN
+  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolename = 'ariel5253') THEN
     CREATE ROLE ariel5253 LOGIN PASSWORD 'ariel5253';
   ELSE
     ALTER ROLE ariel5253 WITH LOGIN PASSWORD 'ariel5253';
   END IF;
 END $$;
 
-GRANT desarrollador TO ariel5253;
+GRANT developer TO ariel5253;
 GRANT qa TO ariel5253;
+
+

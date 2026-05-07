@@ -1,20 +1,20 @@
 ﻿databaseChangeLog:
   - changeSet:
-      id: 017-ddl-procedures-001-sp-crear-reserva
+      id: 017-ddl-procedures-001-sp-crear-reservation
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/07_procedures/001_sp_crear_reserva.sql
+      logicalFilePath: 01_ddl/07_procedures/001_sp_create_reservationtion.sql
       labels: "ddl,procedures"
-      comment: Ejecuta 01_ddl/07_procedures/001_sp_crear_reserva.sql.
+      comment: Ejecuta 01_ddl/07_procedures/001_sp_create_reservationtion.sql.
       changes:
         - sqlFile:
-            path: 001_sp_crear_reserva.sql
+            path: 001_sp_create_reservationtion.sql
             relativeToChangelogFile: true
             splitStatements: false
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/07_procedures/001_sp_crear_reserva.rollback.sql
+            path: ../../05_rollbacks/01_ddl/07_procedures/001_sp_create_reservationtion.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
@@ -40,62 +40,64 @@
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 019-ddl-procedures-003-sp-registrar-entrada-producto
+      id: 019-ddl-procedures-003-sp-registrar-entrada-product
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/07_procedures/003_sp_registrar_entrada_producto.sql
+      logicalFilePath: 01_ddl/07_procedures/003_sp_register_product_entry.sql
       labels: "ddl,procedures"
-      comment: Ejecuta 01_ddl/07_procedures/003_sp_registrar_entrada_producto.sql.
+      comment: Ejecuta 01_ddl/07_procedures/003_sp_register_product_entry.sql.
       changes:
         - sqlFile:
-            path: 003_sp_registrar_entrada_producto.sql
+            path: 003_sp_register_product_entry.sql
             relativeToChangelogFile: true
             splitStatements: false
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/07_procedures/003_sp_registrar_entrada_producto.rollback.sql
+            path: ../../05_rollbacks/01_ddl/07_procedures/003_sp_register_product_entry.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 020-ddl-procedures-004-sp-emitir-factura
+      id: 020-ddl-procedures-004-sp-emitir-invoice
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/07_procedures/004_sp_emitir_factura.sql
+      logicalFilePath: 01_ddl/07_procedures/004_sp_issue_invoice.sql
       labels: "ddl,procedures"
-      comment: Ejecuta 01_ddl/07_procedures/004_sp_emitir_factura.sql.
+      comment: Ejecuta 01_ddl/07_procedures/004_sp_issue_invoice.sql.
       changes:
         - sqlFile:
-            path: 004_sp_emitir_factura.sql
+            path: 004_sp_issue_invoice.sql
             relativeToChangelogFile: true
             splitStatements: false
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/07_procedures/004_sp_emitir_factura.rollback.sql
+            path: ../../05_rollbacks/01_ddl/07_procedures/004_sp_issue_invoice.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 021-ddl-procedures-005-sp-cerrar-mantenimiento
+      id: 021-ddl-procedures-005-sp-cerrar-maintenance
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/07_procedures/005_sp_cerrar_mantenimiento.sql
+      logicalFilePath: 01_ddl/07_procedures/005_sp_close_maintenance.sql
       labels: "ddl,procedures"
-      comment: Ejecuta 01_ddl/07_procedures/005_sp_cerrar_mantenimiento.sql.
+      comment: Ejecuta 01_ddl/07_procedures/005_sp_close_maintenance.sql.
       changes:
         - sqlFile:
-            path: 005_sp_cerrar_mantenimiento.sql
+            path: 005_sp_close_maintenance.sql
             relativeToChangelogFile: true
             splitStatements: false
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/07_procedures/005_sp_cerrar_mantenimiento.rollback.sql
+            path: ../../05_rollbacks/01_ddl/07_procedures/005_sp_close_maintenance.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
+
+

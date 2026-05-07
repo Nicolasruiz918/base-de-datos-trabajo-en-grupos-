@@ -1,5 +1,7 @@
-﻿DROP VIEW IF EXISTS mantenimiento.v_dashboard_mantenimiento_actual;
-DROP VIEW IF EXISTS seguridad.v_usuarios_roles;
-DROP VIEW IF EXISTS facturacion.v_facturacion_estadia;
-DROP VIEW IF EXISTS prestacion_servicio.v_reservas_detalle;
-DROP VIEW IF EXISTS distribucion.v_habitaciones_disponibilidad;
+﻿DROP VIEW IF EXISTS maintenance.v_current_maintenance_dashboard;
+DROP VIEW IF EXISTS security.v_user_roles;
+DROP VIEW IF EXISTS billing.v_stay_billing;
+DROP VIEW IF EXISTS service_delivery.v_reservationtion_detail;
+DROP VIEW IF EXISTS distribution.v_room_availability;
+
+

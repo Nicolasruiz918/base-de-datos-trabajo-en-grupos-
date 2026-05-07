@@ -22,19 +22,19 @@
   - changeSet:
       id: 013-ddl-functions-002-fn-calcular-noches
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/06_functions/002_fn_calcular_noches.sql
+      logicalFilePath: 01_ddl/06_functions/002_fn_calculate_nights.sql
       labels: "ddl,functions"
-      comment: Ejecuta 01_ddl/06_functions/002_fn_calcular_noches.sql.
+      comment: Ejecuta 01_ddl/06_functions/002_fn_calculate_nights.sql.
       changes:
         - sqlFile:
-            path: 002_fn_calcular_noches.sql
+            path: 002_fn_calculate_nights.sql
             relativeToChangelogFile: true
             splitStatements: false
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/06_functions/002_fn_calcular_noches.rollback.sql
+            path: ../../05_rollbacks/01_ddl/06_functions/002_fn_calculate_nights.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
@@ -42,60 +42,62 @@
   - changeSet:
       id: 014-ddl-functions-003-fn-calcular-total
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/06_functions/003_fn_calcular_total.sql
+      logicalFilePath: 01_ddl/06_functions/003_fn_calculate_total.sql
       labels: "ddl,functions"
-      comment: Ejecuta 01_ddl/06_functions/003_fn_calcular_total.sql.
+      comment: Ejecuta 01_ddl/06_functions/003_fn_calculate_total.sql.
       changes:
         - sqlFile:
-            path: 003_fn_calcular_total.sql
+            path: 003_fn_calculate_total.sql
             relativeToChangelogFile: true
             splitStatements: false
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/06_functions/003_fn_calcular_total.rollback.sql
+            path: ../../05_rollbacks/01_ddl/06_functions/003_fn_calculate_total.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 015-ddl-functions-004-fn-calcular-precio-reserva
+      id: 015-ddl-functions-004-fn-calculate-reservationtion-price
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/06_functions/004_fn_calcular_precio_reserva.sql
+      logicalFilePath: 01_ddl/06_functions/004_fn_calculate_reservationtion_price.sql
       labels: "ddl,functions"
-      comment: Ejecuta 01_ddl/06_functions/004_fn_calcular_precio_reserva.sql.
+      comment: Ejecuta 01_ddl/06_functions/004_fn_calculate_reservationtion_price.sql.
       changes:
         - sqlFile:
-            path: 004_fn_calcular_precio_reserva.sql
+            path: 004_fn_calculate_reservationtion_price.sql
             relativeToChangelogFile: true
             splitStatements: false
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/06_functions/004_fn_calcular_precio_reserva.rollback.sql
+            path: ../../05_rollbacks/01_ddl/06_functions/004_fn_calculate_reservationtion_price.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 016-ddl-functions-005-fn-stock-disponible
+      id: 016-ddl-functions-005-fn-stock-available
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/06_functions/005_fn_stock_disponible.sql
+      logicalFilePath: 01_ddl/06_functions/005_fn_available_stock.sql
       labels: "ddl,functions"
-      comment: Ejecuta 01_ddl/06_functions/005_fn_stock_disponible.sql.
+      comment: Ejecuta 01_ddl/06_functions/005_fn_available_stock.sql.
       changes:
         - sqlFile:
-            path: 005_fn_stock_disponible.sql
+            path: 005_fn_available_stock.sql
             relativeToChangelogFile: true
             splitStatements: false
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/06_functions/005_fn_stock_disponible.rollback.sql
+            path: ../../05_rollbacks/01_ddl/06_functions/005_fn_available_stock.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
+
+

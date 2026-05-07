@@ -1,1 +1,3 @@
-﻿DROP FUNCTION IF EXISTS parametrizacion.fn_set_updated_at() CASCADE;
+﻿DROP FUNCTION IF EXISTS configuration.fn_set_updated_at() CASCADE;
+
+

@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION parametrizacion.fn_set_updated_at()
+﻿CREATE OR REPLACE FUNCTION configuration.fn_set_updated_at()
 RETURNS TRIGGER
 LANGUAGE plpgsql
 AS $$
@@ -7,3 +7,5 @@ BEGIN
   RETURN NEW;
 END;
 $$;
+
+

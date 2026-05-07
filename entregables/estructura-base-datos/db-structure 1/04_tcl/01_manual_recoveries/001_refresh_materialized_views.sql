@@ -1,7 +1,9 @@
 ﻿BEGIN;
 
-REFRESH MATERIALIZED VIEW facturacion.mv_ingresos_por_mes;
-REFRESH MATERIALIZED VIEW distribucion.mv_ocupacion_por_sede;
+REFRESH MATERIALIZED VIEW billing.mv_monthly_revenue;
+REFRESH MATERIALIZED VIEW distribution.mv_site_occupancy;
 
 COMMIT;
+
+
 

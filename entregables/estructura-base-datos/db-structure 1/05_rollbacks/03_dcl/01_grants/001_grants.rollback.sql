@@ -1,4 +1,6 @@
-﻿REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA parametrizacion, distribucion, prestacion_servicio, facturacion, inventario, notificacion, seguridad, mantenimiento FROM administrador, desarrollador, qa;
-REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA parametrizacion, distribucion, prestacion_servicio, facturacion, inventario, notificacion, seguridad, mantenimiento FROM administrador, desarrollador, qa;
-REVOKE USAGE ON SCHEMA parametrizacion, distribucion, prestacion_servicio, facturacion, inventario, notificacion, seguridad, mantenimiento FROM administrador, desarrollador, qa;
-REVOKE CONNECT ON DATABASE sistema_hotelero FROM administrador, desarrollador, qa, ariel5253;
+﻿REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA configuration, distribution, service_delivery, billing, inventory, notification, security, maintenance FROM administrator, developer, qa;
+REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA configuration, distribution, service_delivery, billing, inventory, notification, security, maintenance FROM administrator, developer, qa;
+REVOKE USAGE ON SCHEMA configuration, distribution, service_delivery, billing, inventory, notification, security, maintenance FROM administrator, developer, qa;
+REVOKE CONNECT ON DATABASE sistema_hotelero FROM administrator, developer, qa, ariel5253;
+
+

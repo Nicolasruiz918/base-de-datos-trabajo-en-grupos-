@@ -1,0 +1,3 @@
+﻿DROP MATERIALIZED VIEW IF EXISTS billing.mv_monthly_revenue CASCADE;
+
+

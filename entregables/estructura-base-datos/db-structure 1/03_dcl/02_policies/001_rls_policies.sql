@@ -1,41 +1,43 @@
-﻿ALTER TABLE parametrizacion.cliente ENABLE ROW LEVEL SECURITY;
-ALTER TABLE parametrizacion.persona ENABLE ROW LEVEL SECURITY;
-ALTER TABLE seguridad.usuario ENABLE ROW LEVEL SECURITY;
-ALTER TABLE facturacion.factura ENABLE ROW LEVEL SECURITY;
-ALTER TABLE facturacion.pago_parcial ENABLE ROW LEVEL SECURITY;
+﻿ALTER TABLE configuration.customer ENABLE ROW LEVEL SECURITY;
+ALTER TABLE configuration.person ENABLE ROW LEVEL SECURITY;
+ALTER TABLE security.user_account ENABLE ROW LEVEL SECURITY;
+ALTER TABLE billing.invoice ENABLE ROW LEVEL SECURITY;
+ALTER TABLE billing.partial_payment ENABLE ROW LEVEL SECURITY;
 
-DROP POLICY IF EXISTS pol_cliente_admin_all ON parametrizacion.cliente;
-CREATE POLICY pol_cliente_admin_all ON parametrizacion.cliente FOR ALL TO administrador USING (true) WITH CHECK (true);
+DROP POLICY IF EXISTS pol_customer_admin_all ON configuration.customer;
+CREATE POLICY pol_customer_admin_all ON configuration.customer FOR ALL TO administrator USING (true) WITH CHECK (true);
 
-DROP POLICY IF EXISTS pol_persona_admin_all ON parametrizacion.persona;
-CREATE POLICY pol_persona_admin_all ON parametrizacion.persona FOR ALL TO administrador USING (true) WITH CHECK (true);
+DROP POLICY IF EXISTS pol_person_admin_all ON configuration.person;
+CREATE POLICY pol_person_admin_all ON configuration.person FOR ALL TO administrator USING (true) WITH CHECK (true);
 
-DROP POLICY IF EXISTS pol_usuario_admin_all ON seguridad.usuario;
-CREATE POLICY pol_usuario_admin_all ON seguridad.usuario FOR ALL TO administrador USING (true) WITH CHECK (true);
+DROP POLICY IF EXISTS pol_user_account_admin_all ON security.user_account;
+CREATE POLICY pol_user_account_admin_all ON security.user_account FOR ALL TO administrator USING (true) WITH CHECK (true);
 
-DROP POLICY IF EXISTS pol_factura_admin_all ON facturacion.factura;
-CREATE POLICY pol_factura_admin_all ON facturacion.factura FOR ALL TO administrador USING (true) WITH CHECK (true);
+DROP POLICY IF EXISTS pol_invoice_admin_all ON billing.invoice;
+CREATE POLICY pol_invoice_admin_all ON billing.invoice FOR ALL TO administrator USING (true) WITH CHECK (true);
 
-DROP POLICY IF EXISTS pol_pago_admin_all ON facturacion.pago_parcial;
-CREATE POLICY pol_pago_admin_all ON facturacion.pago_parcial FOR ALL TO administrador USING (true) WITH CHECK (true);
+DROP POLICY IF EXISTS pol_payment_admin_all ON billing.partial_payment;
+CREATE POLICY pol_payment_admin_all ON billing.partial_payment FOR ALL TO administrator USING (true) WITH CHECK (true);
 
-DROP POLICY IF EXISTS pol_cliente_desarrollador_all ON parametrizacion.cliente;
-CREATE POLICY pol_cliente_desarrollador_all ON parametrizacion.cliente FOR ALL TO desarrollador USING (status <> 'DELETED') WITH CHECK (status <> 'DELETED');
+DROP POLICY IF EXISTS pol_customer_developer_all ON configuration.customer;
+CREATE POLICY pol_customer_developer_all ON configuration.customer FOR ALL TO developer USING (status <> 'DELETED') WITH CHECK (status <> 'DELETED');
 
-DROP POLICY IF EXISTS pol_persona_desarrollador_all ON parametrizacion.persona;
-CREATE POLICY pol_persona_desarrollador_all ON parametrizacion.persona FOR ALL TO desarrollador USING (status <> 'DELETED') WITH CHECK (status <> 'DELETED');
+DROP POLICY IF EXISTS pol_person_developer_all ON configuration.person;
+CREATE POLICY pol_person_developer_all ON configuration.person FOR ALL TO developer USING (status <> 'DELETED') WITH CHECK (status <> 'DELETED');
 
-DROP POLICY IF EXISTS pol_usuario_desarrollador_read ON seguridad.usuario;
-CREATE POLICY pol_usuario_desarrollador_read ON seguridad.usuario FOR SELECT TO desarrollador USING (status <> 'DELETED');
+DROP POLICY IF EXISTS pol_user_account_developer_read ON security.user_account;
+CREATE POLICY pol_user_account_developer_read ON security.user_account FOR SELECT TO developer USING (status <> 'DELETED');
 
-DROP POLICY IF EXISTS pol_factura_desarrollador_all ON facturacion.factura;
-CREATE POLICY pol_factura_desarrollador_all ON facturacion.factura FOR ALL TO desarrollador USING (status <> 'DELETED') WITH CHECK (status <> 'DELETED');
+DROP POLICY IF EXISTS pol_invoice_developer_all ON billing.invoice;
+CREATE POLICY pol_invoice_developer_all ON billing.invoice FOR ALL TO developer USING (status <> 'DELETED') WITH CHECK (status <> 'DELETED');
 
-DROP POLICY IF EXISTS pol_pago_desarrollador_all ON facturacion.pago_parcial;
-CREATE POLICY pol_pago_desarrollador_all ON facturacion.pago_parcial FOR ALL TO desarrollador USING (status <> 'DELETED') WITH CHECK (status <> 'DELETED');
+DROP POLICY IF EXISTS pol_payment_developer_all ON billing.partial_payment;
+CREATE POLICY pol_payment_developer_all ON billing.partial_payment FOR ALL TO developer USING (status <> 'DELETED') WITH CHECK (status <> 'DELETED');
 
-DROP POLICY IF EXISTS pol_cliente_qa_read ON parametrizacion.cliente;
-CREATE POLICY pol_cliente_qa_read ON parametrizacion.cliente FOR SELECT TO qa USING (status = 'ACTIVE');
+DROP POLICY IF EXISTS pol_customer_qa_read ON configuration.customer;
+CREATE POLICY pol_customer_qa_read ON configuration.customer FOR SELECT TO qa USING (status = 'ACTIVE');
 
-DROP POLICY IF EXISTS pol_factura_qa_read ON facturacion.factura;
-CREATE POLICY pol_factura_qa_read ON facturacion.factura FOR SELECT TO qa USING (status = 'ACTIVE');
+DROP POLICY IF EXISTS pol_invoice_qa_read ON billing.invoice;
+CREATE POLICY pol_invoice_qa_read ON billing.invoice FOR SELECT TO qa USING (status = 'ACTIVE');
+
+

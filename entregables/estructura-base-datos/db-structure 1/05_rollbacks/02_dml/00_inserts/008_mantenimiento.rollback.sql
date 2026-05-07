@@ -1,1 +1,0 @@
-﻿DELETE FROM mantenimiento.dashboard_mantenimiento;

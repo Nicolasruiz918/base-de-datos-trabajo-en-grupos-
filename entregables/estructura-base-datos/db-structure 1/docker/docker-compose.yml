@@ -48,3 +48,5 @@ volumes:
 networks:
   sistema_hotelero_network:
     driver: bridge
+
+

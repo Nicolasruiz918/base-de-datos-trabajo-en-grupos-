@@ -2,20 +2,22 @@
   - changeSet:
       id: 044-dml-updates-001-actualizar-estados-operativos
       author: sistema-hotelero
-      logicalFilePath: 02_dml/01_updates/001_actualizar_estados_operativos.sql
+      logicalFilePath: 02_dml/01_updates/001_update_operational_statuses.sql
       labels: "dml,updates"
-      comment: Ejecuta 02_dml/01_updates/001_actualizar_estados_operativos.sql.
+      comment: Ejecuta 02_dml/01_updates/001_update_operational_statuses.sql.
       changes:
         - sqlFile:
-            path: 001_actualizar_estados_operativos.sql
+            path: 001_update_operational_statuses.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/02_dml/01_updates/001_actualizar_estados_operativos.rollback.sql
+            path: ../../05_rollbacks/02_dml/01_updates/001_update_operational_statuses.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
+
+

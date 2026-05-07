@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE PROCEDURE seguridad.sp_soft_delete(
+﻿CREATE OR REPLACE PROCEDURE security.sp_soft_delete(
   p_schema TEXT,
   p_table TEXT,
   p_id UUID,
@@ -16,3 +16,5 @@ BEGIN
   USING p_deleted_by, p_id;
 END;
 $$;
+
+

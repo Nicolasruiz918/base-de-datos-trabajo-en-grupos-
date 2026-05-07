@@ -18,3 +18,5 @@ El archivo `changelog-master.sql` se conserva como orden maestro para ejecucion 
 - `04_tcl/changelog-master.yaml`
 
 El maestro global `changelog/changelog-master.yaml` incluye esos cuatro archivos.
+
+

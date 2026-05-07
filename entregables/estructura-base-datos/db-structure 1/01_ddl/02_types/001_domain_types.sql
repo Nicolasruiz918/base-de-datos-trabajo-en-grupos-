@@ -1,31 +1,33 @@
 ﻿DO $$
 BEGIN
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'record_status' AND typnamespace = 'parametrizacion'::regnamespace) THEN
-    CREATE TYPE parametrizacion.record_status AS ENUM ('ACTIVE', 'INACTIVE', 'DELETED');
+  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'record_status' AND typnamespace = 'configuration'::regnamespace) THEN
+    CREATE TYPE configuration.record_status AS ENUM ('ACTIVE', 'INACTIVE', 'DELETED');
   END IF;
 
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'estado_reserva' AND typnamespace = 'prestacion_servicio'::regnamespace) THEN
-    CREATE TYPE prestacion_servicio.estado_reserva AS ENUM ('PENDIENTE', 'CONFIRMADA', 'CANCELADA', 'CHECK_IN', 'FINALIZADA');
+  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'reservationtion_status' AND typnamespace = 'service_delivery'::regnamespace) THEN
+    CREATE TYPE service_delivery.reservationtion_status AS ENUM ('PENDING', 'CONFIRMED', 'CANCELLED', 'CHECK_IN', 'FINISHED');
   END IF;
 
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'estado_estadia' AND typnamespace = 'prestacion_servicio'::regnamespace) THEN
-    CREATE TYPE prestacion_servicio.estado_estadia AS ENUM ('ACTIVA', 'FINALIZADA', 'CANCELADA');
+  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'stay_status' AND typnamespace = 'service_delivery'::regnamespace) THEN
+    CREATE TYPE service_delivery.stay_status AS ENUM ('ACTIVE', 'FINISHED', 'CANCELLED');
   END IF;
 
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'estado_factura' AND typnamespace = 'facturacion'::regnamespace) THEN
-    CREATE TYPE facturacion.estado_factura AS ENUM ('BORRADOR', 'EMITIDA', 'PAGADA', 'ANULADA');
+  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'invoice_status' AND typnamespace = 'billing'::regnamespace) THEN
+    CREATE TYPE billing.invoice_status AS ENUM ('DRAFT', 'ISSUED', 'PAID', 'VOIDED');
   END IF;
 
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'tipo_movimiento_inventario' AND typnamespace = 'inventario'::regnamespace) THEN
-    CREATE TYPE inventario.tipo_movimiento_inventario AS ENUM ('ENTRADA', 'SALIDA', 'AJUSTE');
+  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'inventory_movement_type' AND typnamespace = 'inventory'::regnamespace) THEN
+    CREATE TYPE inventory.inventory_movement_type AS ENUM ('IN', 'OUT', 'ADJUSTMENT');
   END IF;
 
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'canal_notificacion' AND typnamespace = 'notificacion'::regnamespace) THEN
-    CREATE TYPE notificacion.canal_notificacion AS ENUM ('EMAIL', 'SMS', 'WHATSAPP', 'SISTEMA');
+  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'notification_channel' AND typnamespace = 'notification'::regnamespace) THEN
+    CREATE TYPE notification.notification_channel AS ENUM ('EMAIL', 'SMS', 'WHATSAPP', 'SYSTEM');
   END IF;
 
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'estado_mantenimiento' AND typnamespace = 'mantenimiento'::regnamespace) THEN
-    CREATE TYPE mantenimiento.estado_mantenimiento AS ENUM ('PENDIENTE', 'EN_PROCESO', 'FINALIZADO', 'CANCELADO');
+  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'maintenance_status' AND typnamespace = 'maintenance'::regnamespace) THEN
+    CREATE TYPE maintenance.maintenance_status AS ENUM ('PENDING', 'IN_PROGRESS', 'FINISHED', 'CANCELLED');
   END IF;
 END $$;
+
+
 

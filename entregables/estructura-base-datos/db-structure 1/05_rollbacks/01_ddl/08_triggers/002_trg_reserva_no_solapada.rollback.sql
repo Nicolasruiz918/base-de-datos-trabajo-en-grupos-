@@ -1,1 +1,0 @@
-﻿DROP TRIGGER IF EXISTS trg_reserva_no_solapada ON prestacion_servicio.reserva_habitacion;

@@ -1,14 +1,16 @@
-﻿DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.cliente;
-DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.persona;
-DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.empresa;
-DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.tipo_dia;
-DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.metodo_pago;
-DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.informacion_legal;
-DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.empleado;
-DROP TRIGGER IF EXISTS trg_set_updated_at ON parametrizacion.precio;
-DROP TRIGGER IF EXISTS trg_set_updated_at ON distribucion.habitacion;
-DROP TRIGGER IF EXISTS trg_habitacion_capacidad ON distribucion.habitacion;
-DROP TRIGGER IF EXISTS trg_reserva_no_solapada ON prestacion_servicio.reserva_habitacion;
-DROP TRIGGER IF EXISTS trg_venta_producto_stock ON inventario.venta_producto;
-DROP TRIGGER IF EXISTS trg_pre_factura_total ON facturacion.pre_factura;
-DROP TRIGGER IF EXISTS trg_factura_total ON facturacion.factura;
+﻿DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.customer;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.person;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.company;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.day_type;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.payment_method;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.legal_information;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.employee;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.price;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON distribution.room;
+DROP TRIGGER IF EXISTS trg_room_capacity ON distribution.room;
+DROP TRIGGER IF EXISTS trg_reservationtion_no_overlap ON service_delivery.room_reservationtion;
+DROP TRIGGER IF EXISTS trg_product_sale_stock ON inventory.product_sale;
+DROP TRIGGER IF EXISTS trg_pre_invoice_total ON billing.pre_invoice;
+DROP TRIGGER IF EXISTS trg_invoice_total ON billing.invoice;
+
+

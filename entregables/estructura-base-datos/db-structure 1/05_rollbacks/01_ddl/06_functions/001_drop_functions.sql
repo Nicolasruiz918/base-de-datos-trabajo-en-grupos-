@@ -1,9 +1,11 @@
-﻿DROP FUNCTION IF EXISTS facturacion.fn_normalizar_total_facturacion() CASCADE;
-DROP FUNCTION IF EXISTS inventario.fn_validar_venta_producto_stock() CASCADE;
-DROP FUNCTION IF EXISTS prestacion_servicio.fn_validar_reserva_habitacion() CASCADE;
-DROP FUNCTION IF EXISTS distribucion.fn_validar_capacidad_habitacion() CASCADE;
-DROP FUNCTION IF EXISTS inventario.fn_stock_disponible(UUID);
-DROP FUNCTION IF EXISTS parametrizacion.fn_calcular_precio_reserva(UUID, TIMESTAMPTZ, TIMESTAMPTZ);
-DROP FUNCTION IF EXISTS facturacion.fn_calcular_total(NUMERIC, NUMERIC, NUMERIC);
-DROP FUNCTION IF EXISTS prestacion_servicio.fn_calcular_noches(TIMESTAMPTZ, TIMESTAMPTZ);
-DROP FUNCTION IF EXISTS parametrizacion.fn_set_updated_at() CASCADE;
+﻿DROP FUNCTION IF EXISTS billing.fn_normalize_billing_total() CASCADE;
+DROP FUNCTION IF EXISTS inventory.fn_validate_product_sale_stock() CASCADE;
+DROP FUNCTION IF EXISTS service_delivery.fn_validate_room_reservationtion() CASCADE;
+DROP FUNCTION IF EXISTS distribution.fn_validate_room_capacity() CASCADE;
+DROP FUNCTION IF EXISTS inventory.fn_available_stock(UUID);
+DROP FUNCTION IF EXISTS configuration.fn_calculate_reservationtion_price(UUID, TIMESTAMPTZ, TIMESTAMPTZ);
+DROP FUNCTION IF EXISTS billing.fn_calculate_total(NUMERIC, NUMERIC, NUMERIC);
+DROP FUNCTION IF EXISTS service_delivery.fn_calculate_nights(TIMESTAMPTZ, TIMESTAMPTZ);
+DROP FUNCTION IF EXISTS configuration.fn_set_updated_at() CASCADE;
+
+

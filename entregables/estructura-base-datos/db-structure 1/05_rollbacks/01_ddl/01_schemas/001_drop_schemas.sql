@@ -1,8 +1,10 @@
-﻿DROP SCHEMA IF EXISTS mantenimiento;
-DROP SCHEMA IF EXISTS seguridad;
-DROP SCHEMA IF EXISTS notificacion;
-DROP SCHEMA IF EXISTS facturacion;
-DROP SCHEMA IF EXISTS inventario;
-DROP SCHEMA IF EXISTS prestacion_servicio;
-DROP SCHEMA IF EXISTS distribucion;
-DROP SCHEMA IF EXISTS parametrizacion;
+﻿DROP SCHEMA IF EXISTS maintenance;
+DROP SCHEMA IF EXISTS security;
+DROP SCHEMA IF EXISTS notification;
+DROP SCHEMA IF EXISTS billing;
+DROP SCHEMA IF EXISTS inventory;
+DROP SCHEMA IF EXISTS service_delivery;
+DROP SCHEMA IF EXISTS distribution;
+DROP SCHEMA IF EXISTS configuration;
+
+

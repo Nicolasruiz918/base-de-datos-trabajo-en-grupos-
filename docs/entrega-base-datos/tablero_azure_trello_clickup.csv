@@ -1,6 +1,6 @@
 ﻿ID,Titulo,Tipo,Prioridad,Estimacion,Responsable,Estado,Dependencias,Entregable
 HU-1,Crear repositorio Git con ramas main qa y dev,User Story,Alta,3,Nicolas Estid Ruiz Sastoque,Ready,Ninguna,repositorio Git
-HU-2,Plan de trabajo y seguimiento,User Story,Alta,3,Emily Sharith Amezquita Saavedra,Ready,HU-1,"docs/entrega-base-datos/plan_trabajo_inicial.md, docs/entrega-base-datos/seguimientos.md"
+HU-2,Plan de trabajo y seguimiento,User Story,Alta,3,Emily Sharith Amezquita Saavedra,Ready,HU-1,"docs/entrega-base-datos/plan_trabajo_inicial.md, docs/entrega-base-datos/seguimientos.md, docs/entrega-base-datos/gestion_equipo.md"
 HU-3,Identificar dominios,User Story,Alta,3,Nicolas Estid Ruiz Sastoque,Ready,HU-2,docs/entrega-base-datos/analisis_dominios.md
 HU-4,Crear ADRs,User Story,Alta,5,Nicolas Estid Ruiz Sastoque,Ready,HU-3,docs/entrega-base-datos/ADR
 HU-5,Estructura GitHub Actions,User Story,Media,5,Nicolas Estid Ruiz Sastoque,Backlog,HU-1,.github/workflows
@@ -22,3 +22,5 @@ HU-20,DCL grants,User Story,Alta,3,Brayan Perdomo,Ready,HU-19,03_dcl/01_grants
 HU-21,DCL policies,User Story,Alta,3,Brayan Perdomo,Ready,HU-20,03_dcl/02_policies
 HU-22,Crear TCL,User Story,Media,3,Nicolas Estid Ruiz Sastoque,Ready,HU-21,04_tcl
 HU-23,Validacion final y documentacion,User Story,Alta,5,Emily Sharith Amezquita Saavedra,Backlog,HU-22,scripts/smoke-test.sql
+
+

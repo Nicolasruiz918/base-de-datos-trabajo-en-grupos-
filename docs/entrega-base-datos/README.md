@@ -12,6 +12,38 @@ Entrega organizada para PostgreSQL con 8 dominios oficiales.
 - Password de autenticacion del sistema: `ariel5253`
 - El usuario `ariel5253` no hereda el rol `administrador`; usa permisos controlados.
 
+## Documentos principales
+
+| Documento | Uso |
+|-----------|-----|
+| `Historias de usuario.md` | HU tecnicas con titulo, descripcion, entregables, criterios, checklist y MoSCoW. |
+| `plan_trabajo_inicial.md` | Plan del sprint y entregables por dia. |
+| `seguimientos.md` | Seguimiento diario, avances, bloqueos y evidencias. |
+| `analisis_dominios.md` | Explicacion de los 8 dominios oficiales y sus tablas relacionadas. |
+| `gestion_equipo.md` | Planteamiento, roles, responsabilidades, tablero del equipo y evidencias esperadas. |
+| `guia_tecnica_ejecucion.md` | Estructura de BD, orden de carga, Docker, Liquibase, smoke test y cuidado de FKs. |
+| `flujo_git_por_historias.md` | Guia para subir el proyecto por HU, ramas, commits, PRs y promocion `dev -> qa -> main`. |
+| `matriz_trazabilidad_hu.md` | Relacion entre HU tecnicas, dominios, entregables y dependencias. |
+| `dor_dod.md` | Definition of Ready y Definition of Done. |
+| `ADR/` | Decisiones tecnicas importantes: PostgreSQL, UUID/auditoria/eliminacion e idioma tecnico. |
+| `tablero_azure_trello_clickup.csv` | Tablero importable con HU tecnicas. |
+| `plan_subida_hu_tecnicas.csv` | Orden sugerido de ramas, archivos y validaciones por HU. |
+
+## Ejecucion rapida
+
+Desde `entregables/estructura-base-datos/db-structure 1/docker`:
+
+```bash
+docker-compose down -v
+docker-compose up --abort-on-container-exit liquibase
+```
+
+Smoke test:
+
+```bash
+docker-compose exec postgres psql -U admin -d sistema_hotelero -f /scripts/smoke-test.sql
+```
+
 ## Estructura clave
 
 - DDL separado por extensiones, schemas, types, tablas, views, materialized views, functions, procedures, triggers e indexes.
@@ -19,46 +51,7 @@ Entrega organizada para PostgreSQL con 8 dominios oficiales.
 - DCL separado en roles, grants y policies.
 - TCL y rollbacks incluidos.
 - Docker Compose preparado con PostgreSQL y Liquibase.
-
-## Ejecucion recomendada
-
-Desde `entregables/estructura-base-datos/db-structure 1/docker`:
-
-```bash
-docker compose up liquibase
-```
-
-Smoke test:
-
-```bash
-docker compose exec postgres psql -U admin -d sistema_hotelero -f /scripts/smoke-test.sql
-```
-
-## Configuracion de servicios
-
-| Servicio | Imagen | Uso |
-|----------|--------|-----|
-| `postgres` | `postgres:16` | Base de datos `sistema_hotelero` expuesta en `localhost:25432`. |
-| `liquibase` | `liquibase/liquibase:4.25` | Ejecuta `changelog/changelog-master.yaml`. |
-
-## Credenciales de ambiente Docker
-
-| Elemento | Valor |
-|----------|-------|
-| Usuario PostgreSQL | `admin` |
-| Password PostgreSQL | `admin123` |
-| JDBC URL | `jdbc:postgresql://postgres:5432/sistema_hotelero` |
-
-## Documentos principales
-
-- `planning.md`: planning Markdown consolidado para la entrega de base de datos.
-- `Historias de usuario.md`: backlog organizado.
-- `seguimientos.md`: estado, decisiones y evidencias pendientes.
-- `dor_dod.md`: Definition of Ready y Definition of Done.
-- `guia_ejecucion_y_validacion.md`: pasos de ejecucion y smoke test.
-- ADR/ADR-001-migracion-postgresql.md: decision de migracion a PostgreSQL.
-- ADR/ADR-002-identificadores-estados-auditoria-eliminacion.md: decision de UUID, status, auditoria y eliminacion logica.
-- ADR/ADR-003-cambio-idioma-base-datos-ingles.md: decision de cambio de idioma tecnico de la base de datos a ingles, manteniendo la documentacion en espanol.
+- Historias de usuario tecnicas documentadas y listas para subir por partes.
 
 ## Changelogs maestros por bloque
 
@@ -68,5 +61,4 @@ docker compose exec postgres psql -U admin -d sistema_hotelero -f /scripts/smoke
 - `04_tcl/changelog-master.yaml`
 
 El maestro global `changelog/changelog-master.yaml` incluye los cuatro maestros anteriores.
-
 

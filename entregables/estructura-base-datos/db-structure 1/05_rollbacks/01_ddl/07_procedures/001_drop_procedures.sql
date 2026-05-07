@@ -1,5 +1,7 @@
-﻿DROP PROCEDURE IF EXISTS mantenimiento.sp_cerrar_mantenimiento(UUID, TEXT);
-DROP PROCEDURE IF EXISTS facturacion.sp_emitir_factura(UUID, VARCHAR);
-DROP PROCEDURE IF EXISTS inventario.sp_registrar_entrada_producto(UUID, INTEGER, TEXT);
-DROP PROCEDURE IF EXISTS seguridad.sp_soft_delete(TEXT, TEXT, UUID, UUID);
-DROP PROCEDURE IF EXISTS prestacion_servicio.sp_crear_reserva(UUID, UUID, TIMESTAMPTZ, TIMESTAMPTZ, SMALLINT);
+﻿DROP PROCEDURE IF EXISTS maintenance.sp_close_maintenance(UUID, TEXT);
+DROP PROCEDURE IF EXISTS billing.sp_issue_invoice(UUID, VARCHAR);
+DROP PROCEDURE IF EXISTS inventory.sp_register_product_entry(UUID, INTEGER, TEXT);
+DROP PROCEDURE IF EXISTS security.sp_soft_delete(TEXT, TEXT, UUID, UUID);
+DROP PROCEDURE IF EXISTS service_delivery.sp_create_reservationtion(UUID, UUID, TIMESTAMPTZ, TIMESTAMPTZ, SMALLINT);
+
+

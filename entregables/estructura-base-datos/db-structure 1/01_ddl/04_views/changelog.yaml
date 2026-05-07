@@ -1,101 +1,103 @@
 ﻿databaseChangeLog:
   - changeSet:
-      id: 028-ddl-views-001-v-habitaciones-disponibilidad
+      id: 028-ddl-views-001-v-rooms-availability
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/04_views/001_v_habitaciones_disponibilidad.sql
+      logicalFilePath: 01_ddl/04_views/001_v_room_availability.sql
       labels: "ddl,views"
-      comment: Ejecuta 01_ddl/04_views/001_v_habitaciones_disponibilidad.sql.
+      comment: Ejecuta 01_ddl/04_views/001_v_room_availability.sql.
       changes:
         - sqlFile:
-            path: 001_v_habitaciones_disponibilidad.sql
+            path: 001_v_room_availability.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/04_views/001_v_habitaciones_disponibilidad.rollback.sql
+            path: ../../05_rollbacks/01_ddl/04_views/001_v_room_availability.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 029-ddl-views-002-v-reservas-detalle
+      id: 029-ddl-views-002-v-reservationtion-detail
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/04_views/002_v_reservas_detalle.sql
+      logicalFilePath: 01_ddl/04_views/002_v_reservationtion_detail.sql
       labels: "ddl,views"
-      comment: Ejecuta 01_ddl/04_views/002_v_reservas_detalle.sql.
+      comment: Ejecuta 01_ddl/04_views/002_v_reservationtion_detail.sql.
       changes:
         - sqlFile:
-            path: 002_v_reservas_detalle.sql
+            path: 002_v_reservationtion_detail.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/04_views/002_v_reservas_detalle.rollback.sql
+            path: ../../05_rollbacks/01_ddl/04_views/002_v_reservationtion_detail.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 030-ddl-views-003-v-facturacion-estadia
+      id: 030-ddl-views-003-v-billing-stay
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/04_views/003_v_facturacion_estadia.sql
+      logicalFilePath: 01_ddl/04_views/003_v_stay_billing.sql
       labels: "ddl,views"
-      comment: Ejecuta 01_ddl/04_views/003_v_facturacion_estadia.sql.
+      comment: Ejecuta 01_ddl/04_views/003_v_stay_billing.sql.
       changes:
         - sqlFile:
-            path: 003_v_facturacion_estadia.sql
+            path: 003_v_stay_billing.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/04_views/003_v_facturacion_estadia.rollback.sql
+            path: ../../05_rollbacks/01_ddl/04_views/003_v_stay_billing.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 031-ddl-views-004-v-usuarios-roles
+      id: 031-ddl-views-004-v-user_accounts-roles
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/04_views/004_v_usuarios_roles.sql
+      logicalFilePath: 01_ddl/04_views/004_v_user_roles.sql
       labels: "ddl,views"
-      comment: Ejecuta 01_ddl/04_views/004_v_usuarios_roles.sql.
+      comment: Ejecuta 01_ddl/04_views/004_v_user_roles.sql.
       changes:
         - sqlFile:
-            path: 004_v_usuarios_roles.sql
+            path: 004_v_user_roles.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/04_views/004_v_usuarios_roles.rollback.sql
+            path: ../../05_rollbacks/01_ddl/04_views/004_v_user_roles.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 032-ddl-views-005-v-dashboard-mantenimiento-actual
+      id: 032-ddl-views-005-v-dashboard-maintenance-actual
       author: sistema-hotelero
-      logicalFilePath: 01_ddl/04_views/005_v_dashboard_mantenimiento_actual.sql
+      logicalFilePath: 01_ddl/04_views/005_v_current_maintenance_dashboard.sql
       labels: "ddl,views"
-      comment: Ejecuta 01_ddl/04_views/005_v_dashboard_mantenimiento_actual.sql.
+      comment: Ejecuta 01_ddl/04_views/005_v_current_maintenance_dashboard.sql.
       changes:
         - sqlFile:
-            path: 005_v_dashboard_mantenimiento_actual.sql
+            path: 005_v_current_maintenance_dashboard.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/04_views/005_v_dashboard_mantenimiento_actual.rollback.sql
+            path: ../../05_rollbacks/01_ddl/04_views/005_v_current_maintenance_dashboard.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
+
+
