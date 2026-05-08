@@ -36,23 +36,32 @@ La base de datos debe quedar alineada con estas decisiones:
 
 | Integrante | Rol | Responsabilidades principales |
 |------------|-----|-------------------------------|
-| Nicolas Estid Ruiz Sastoque | Lider del proyecto y desarrollador | Coordinar la entrega, revisar consistencia documental, validar ramas, apoyar infraestructura y ADR. |
-| Frenier Steven Cardona Perez | Desarrollador | Apoyar DML, DCL, datos poblados, rollbacks y validacion de permisos. |
-| Brayan Perdomo | Desarrollador | Implementar DDL por dominios, FKs, objetos avanzados y changelogs. |
-| Emily Sharith Amezquita Saavedra | QA | Revisar DoR/DoD, smoke test, documentacion, trazabilidad y cierre de calidad. |
+| Nicolas Estid Ruiz Sastoque | Lider del proyecto y desarrollador | Liderar decisiones tecnicas, ADR, ambiente, Liquibase, DDL de parametrizacion/seguridad, DCL roles/grants y TCL. |
+| Frenier Steven Cardona Perez | Desarrollador | Implementar DDL y DML restantes por dominio, apoyar datos poblados, rollbacks y policies. |
+| Brayan Perdomo | Desarrollador | Trabajar repositorio, planeacion, analisis de dominios, DDL de distribucion/prestacion y DML asociado. |
+| Emily Sharith Amezquita Saavedra | QA | Cubrir automatizacion, DDL base, objetos avanzados, triggers, indices, smoke test y validacion final. |
 
 ## Tablero de responsabilidades
 
 | Bloque | HU | Responsable principal | Apoyo | QA |
 |--------|----|----------------------|-------|----|
-| Repositorio, plan y ADR | HU-01 a HU-04 | Nicolas | Emily | Emily |
-| Ambiente y migraciones | HU-05 a HU-08 | Nicolas | Brayan | Emily |
-| DDL por dominios | HU-09 a HU-12 | Brayan | Nicolas | Emily |
-| Objetos avanzados | HU-13 a HU-14 | Brayan | Frenier | Emily |
-| DML | HU-15 a HU-18 | Frenier | Brayan | Emily |
-| DCL y TCL | HU-19 a HU-22 | Frenier | Nicolas | Emily |
+| Repositorio y documentacion inicial | HU-01 a HU-04 | Brayan / Nicolas | Emily | Emily |
+| Ambiente y DDL base | HU-05 a HU-08 | Emily / Nicolas | Brayan | Emily |
+| DDL por dominios | HU-09 a HU-12 | Nicolas / Brayan / Frenier | Emily | Emily |
+| Objetos avanzados | HU-13 a HU-14 | Emily | Nicolas | Emily |
+| DML | HU-15 a HU-18 | Frenier / Brayan | Nicolas | Emily |
+| DCL y TCL | HU-19 a HU-22 | Nicolas / Frenier | Emily | Emily |
 | Validacion final | HU-23 | Emily | Nicolas | Emily |
 
+
+## Asignacion final por HU
+
+| Responsable | Historias asignadas |
+|-------------|---------------------|
+| Nicolas Estid Ruiz Sastoque | HU-04, HU-06, HU-07, HU-09, HU-19, HU-20, HU-22 |
+| Frenier Steven Cardona Perez | HU-11, HU-12, HU-15, HU-17, HU-18, HU-21 |
+| Brayan Perdomo | HU-01, HU-02, HU-03, HU-10, HU-16 |
+| Emily Sharith Amezquita Saavedra | HU-05, HU-08, HU-13, HU-14, HU-23 |
 ## Evidencias esperadas
 
 | Bloque | Evidencia minima |
@@ -72,4 +81,5 @@ La base de datos debe quedar alineada con estas decisiones:
 - `Historias de usuario.md`: se mantiene separado porque es el backlog tecnico principal.
 - `analisis_dominios.md`: se mantiene separado porque es evidencia de analisis.
 - `ADR/`: se mantiene separado porque contiene decisiones tecnicas formales.
+
 

@@ -24,10 +24,19 @@
 
 | Bloque                          | Responsable      | Avance                                                                           |
 | ------------------------------- | ---------------- | -------------------------------------------------------------------------------- |
-| Planificacion e infraestructura | Nicolas / Emily  | Documentacion base, ADR, Docker, PostgreSQL y Liquibase preparados.              |
-| Modelo de datos                 | Brayan / Nicolas | DDL organizado por dominios y objetos avanzados separados por archivo.           |
-| Carga de datos y seguridad      | Frenier / Brayan | DML, DCL y TCL organizados con rollbacks.                                        |
+| Planificacion e infraestructura | Brayan / Nicolas / Emily | Documentacion base, ADR, Docker, PostgreSQL y Liquibase preparados.              |
+| Modelo de datos                 | Nicolas / Brayan / Frenier / Emily | DDL organizado por dominios y objetos avanzados separados por archivo.           |
+| Carga de datos y seguridad      | Frenier / Brayan / Nicolas | DML, DCL y TCL organizados con rollbacks.                                        |
 | Validacion final                | Emily            | Liquibase y smoke test ejecutados correctamente en Docker. |
+
+## Asignacion final de HU
+
+| Responsable | HU asignadas |
+|-------------|--------------|
+| Nicolas Estid Ruiz Sastoque | HU-04, HU-06, HU-07, HU-09, HU-19, HU-20, HU-22 |
+| Frenier Steven Cardona Perez | HU-11, HU-12, HU-15, HU-17, HU-18, HU-21 |
+| Brayan Perdomo | HU-01, HU-02, HU-03, HU-10, HU-16 |
+| Emily Sharith Amezquita Saavedra | HU-05, HU-08, HU-13, HU-14, HU-23 |
 
 ## Pendiente de validacion
 
@@ -41,9 +50,10 @@
 | Validacion            | Resultado esperado                                                |
 | --------------------- | ----------------------------------------------------------------- |
 | Schemas creados       | 8                                                                 |
-| Tablas creadas        | 46                                                                |
+| Tablas creadas        | 51                                                                |
 | Estados de habitacion | 6                                                                 |
 | Tipos de habitacion   | 3                                                                 |
 | Modulos de seguridad  | 8                                                                 |
 | Usuario `ariel5253` | 1 registro en `security.user_account` y login PostgreSQL disponible |
+
 

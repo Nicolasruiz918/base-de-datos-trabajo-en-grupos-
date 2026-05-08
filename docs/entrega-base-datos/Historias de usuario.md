@@ -87,7 +87,7 @@ El proyecto debe iniciar con una estructura de control de versiones clara. La ra
 - [ ] Invitar colaboradores.
 - [ ] Documentar flujo de trabajo en `flujo_git_por_historias.md`.
 
-**Responsable sugerido:** Nicolas Estid Ruiz Sastoque
+**Responsable sugerido:** Brayan Perdomo
 
 **Priorizacion MoSCoW:** Must have
 
@@ -123,7 +123,7 @@ La entrega debe ejecutarse en una semana. El plan define actividades por dia, re
 - [ ] Actualizar seguimiento diario.
 - [ ] Revisar consistencia con el tablero de responsabilidades.
 
-**Responsable sugerido:** Emily Sharith Amezquita Saavedra
+**Responsable sugerido:** Brayan Perdomo
 
 **Priorizacion MoSCoW:** Must have
 
@@ -158,7 +158,7 @@ Se identifican los 8 dominios oficiales del sistema: parametrizacion, seguridad,
 - [ ] Documentar relaciones entre dominios.
 - [ ] Validar que no existan dominios adicionales sin justificacion.
 
-**Responsable sugerido:** Nicolas Estid Ruiz Sastoque
+**Responsable sugerido:** Brayan Perdomo
 
 **Priorizacion MoSCoW:** Must have
 
@@ -238,7 +238,7 @@ La historia define la ruta para integrar validaciones automaticas. Aunque la ent
 - [ ] Revisar que los comandos funcionen localmente.
 - [ ] Relacionar la validacion con Pull Requests.
 
-**Responsable sugerido:** Nicolas Estid Ruiz Sastoque
+**Responsable sugerido:** Emily Sharith Amezquita Saavedra
 
 **Priorizacion MoSCoW:** Must have
 
@@ -354,7 +354,7 @@ Antes de crear tablas de negocio se deben habilitar extensiones necesarias, crea
 - [ ] Documentar campos de auditoria.
 - [ ] Crear rollbacks para extensions, schemas y types.
 
-**Responsable sugerido:** Brayan Perdomo
+**Responsable sugerido:** Emily Sharith Amezquita Saavedra
 
 **Priorizacion MoSCoW:** Must have
 
@@ -394,7 +394,7 @@ Esta historia agrupa los dominios de parametrizacion y seguridad. Parametrizacio
 - [ ] Agregar campos de auditoria.
 - [ ] Registrar changeSet y rollback.
 
-**Responsable sugerido:** Brayan Perdomo
+**Responsable sugerido:** Nicolas Estid Ruiz Sastoque
 
 **Priorizacion MoSCoW:** Must have
 
@@ -472,7 +472,7 @@ Inventario gestiona proveedores, productos, servicios, stock y disponibilidad. F
 - [ ] Agregar constraints monetarios.
 - [ ] Registrar changeSet y rollback.
 
-**Responsable sugerido:** Brayan Perdomo
+**Responsable sugerido:** Frenier Steven Cardona Perez
 
 **Priorizacion MoSCoW:** Must have
 
@@ -510,7 +510,7 @@ Notificacion conserva promociones, alertas, terminos y fidelizacion. Mantenimien
 - [ ] Agregar constraints de estado.
 - [ ] Registrar changeSet y rollback.
 
-**Responsable sugerido:** Brayan Perdomo
+**Responsable sugerido:** Frenier Steven Cardona Perez
 
 **Priorizacion MoSCoW:** Must have
 
@@ -549,7 +549,7 @@ Los objetos de consulta se crean despues de las tablas. Cada view, materialized 
 - [ ] Agregar rollback por objeto.
 - [ ] Validar compilacion con Liquibase.
 
-**Responsable sugerido:** Brayan Perdomo
+**Responsable sugerido:** Emily Sharith Amezquita Saavedra
 
 **Priorizacion MoSCoW:** Must have
 
@@ -588,7 +588,7 @@ Los procedures encapsulan procesos como crear reserva, emitir factura, cerrar ma
 - [ ] Agregar rollback por objeto.
 - [ ] Validar ejecucion en base limpia.
 
-**Responsable sugerido:** Brayan Perdomo
+**Responsable sugerido:** Emily Sharith Amezquita Saavedra
 
 **Priorizacion MoSCoW:** Must have
 
@@ -666,7 +666,7 @@ Los datos de distribucion dependen de empresa y catalogos previos. Los datos de 
 - [ ] Cargar estadia demo si aplica.
 - [ ] Ejecutar validacion de FK.
 
-**Responsable sugerido:** Frenier Steven Cardona Perez
+**Responsable sugerido:** Brayan Perdomo
 
 **Priorizacion MoSCoW:** Must have
 
@@ -781,7 +781,7 @@ La seguridad debe diferenciar roles de base y usuario controlado. El usuario `ar
 - [ ] Agregar rollback.
 - [ ] Documentar permisos esperados.
 
-**Responsable sugerido:** Frenier Steven Cardona Perez
+**Responsable sugerido:** Nicolas Estid Ruiz Sastoque
 
 **Priorizacion MoSCoW:** Must have
 
@@ -817,7 +817,7 @@ Los grants deben permitir DDL y DML donde corresponda, sin habilitar operaciones
 - [ ] Probar permisos basicos.
 - [ ] Agregar rollback.
 
-**Responsable sugerido:** Frenier Steven Cardona Perez
+**Responsable sugerido:** Nicolas Estid Ruiz Sastoque
 
 **Priorizacion MoSCoW:** Must have
 
@@ -890,7 +890,7 @@ Los scripts TCL agrupan operaciones que deben comportarse como una unidad. Tambi
 - [ ] Referenciar en changelog.
 - [ ] Validar que no rompa ejecucion completa.
 
-**Responsable sugerido:** Frenier Steven Cardona Perez
+**Responsable sugerido:** Nicolas Estid Ruiz Sastoque
 
 **Priorizacion MoSCoW:** Must have
 
