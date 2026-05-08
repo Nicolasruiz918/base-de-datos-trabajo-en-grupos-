@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 004-ddl-tables-001-configuration
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/03_tables/001_configuration.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/001_configuration.sql.
+      comment: Runs 01_ddl/03_tables/001_configuration.sql.
       changes:
         - sqlFile:
             path: 001_configuration.sql
@@ -21,10 +21,10 @@
             stripComments: false
   - changeSet:
       id: 005-ddl-tables-002-security
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/03_tables/002_security.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/002_security.sql.
+      comment: Runs 01_ddl/03_tables/002_security.sql.
       changes:
         - sqlFile:
             path: 002_security.sql
@@ -41,10 +41,10 @@
             stripComments: false
   - changeSet:
       id: 006-ddl-tables-003-distribution
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/03_tables/003_distribution.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/003_distribution.sql.
+      comment: Runs 01_ddl/03_tables/003_distribution.sql.
       changes:
         - sqlFile:
             path: 003_distribution.sql
@@ -61,10 +61,10 @@
             stripComments: false
   - changeSet:
       id: 007-ddl-tables-004-service-delivery
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/03_tables/004_service_delivery.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/004_service_delivery.sql.
+      comment: Runs 01_ddl/03_tables/004_service_delivery.sql.
       changes:
         - sqlFile:
             path: 004_service_delivery.sql
@@ -81,10 +81,10 @@
             stripComments: false
   - changeSet:
       id: 008-ddl-tables-005-inventory
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/03_tables/005_inventory.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/005_inventory.sql.
+      comment: Runs 01_ddl/03_tables/005_inventory.sql.
       changes:
         - sqlFile:
             path: 005_inventory.sql
@@ -101,10 +101,10 @@
             stripComments: false
   - changeSet:
       id: 009-ddl-tables-006-billing
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/03_tables/006_billing.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/006_billing.sql.
+      comment: Runs 01_ddl/03_tables/006_billing.sql.
       changes:
         - sqlFile:
             path: 006_billing.sql
@@ -121,10 +121,10 @@
             stripComments: false
   - changeSet:
       id: 010-ddl-tables-007-notification
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/03_tables/007_notification.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/007_notification.sql.
+      comment: Runs 01_ddl/03_tables/007_notification.sql.
       changes:
         - sqlFile:
             path: 007_notification.sql
@@ -141,10 +141,10 @@
             stripComments: false
   - changeSet:
       id: 011-ddl-tables-008-maintenance
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/03_tables/008_maintenance.sql
       labels: "ddl,tables"
-      comment: Ejecuta 01_ddl/03_tables/008_maintenance.sql.
+      comment: Runs 01_ddl/03_tables/008_maintenance.sql.
       changes:
         - sqlFile:
             path: 008_maintenance.sql

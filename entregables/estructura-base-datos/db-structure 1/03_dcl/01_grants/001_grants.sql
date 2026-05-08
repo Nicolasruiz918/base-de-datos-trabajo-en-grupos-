@@ -1,4 +1,4 @@
-﻿GRANT CONNECT ON DATABASE sistema_hotelero TO administrator, developer, qa, ariel5253;
+GRANT CONNECT ON DATABASE hotel_management TO administrator, developer, qa, ariel5253;
 
 GRANT USAGE ON SCHEMA configuration, distribution, service_delivery, billing, inventory, notification, security, maintenance TO administrator, developer, qa;
 

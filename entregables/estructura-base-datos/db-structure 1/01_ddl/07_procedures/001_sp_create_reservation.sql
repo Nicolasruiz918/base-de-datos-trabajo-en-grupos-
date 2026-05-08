@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE PROCEDURE service_delivery.sp_create_reservationtion(
+CREATE OR REPLACE PROCEDURE service_delivery.sp_create_reservation(
   p_customer_id UUID,
   p_room_id UUID,
   p_start_date TIMESTAMPTZ,
@@ -16,13 +16,13 @@ BEGIN
   WHERE id = p_room_id AND status = 'ACTIVE';
 
   IF v_room_type_id IS NULL THEN
-    RAISE EXCEPTION 'Habitacion % no existe o no esta active', p_room_id;
+    RAISE EXCEPTION 'Room % does not exist or is not active', p_room_id;
   END IF;
 
-  v_estimated_value := configuration.fn_calculate_reservationtion_price(v_room_type_id, p_start_date, p_end_date);
+  v_estimated_value := configuration.fn_calculate_reservation_price(v_room_type_id, p_start_date, p_end_date);
 
-  INSERT INTO service_delivery.room_reservationtion (
-    customer_id, room_id, start_date, end_date, guest_count, estimated_value, reservationtion_status
+  INSERT INTO service_delivery.room_reservation (
+    customer_id, room_id, start_date, end_date, guest_count, estimated_value, reservation_status
   )
   VALUES (
     p_customer_id, p_room_id, p_start_date, p_end_date, p_guest_count, v_estimated_value, 'PENDING'

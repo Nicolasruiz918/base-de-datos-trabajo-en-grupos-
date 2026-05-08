@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 002-ddl-schemas-001-schemas
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/01_schemas/001_schemas.sql
       labels: "ddl,schemas"
-      comment: Ejecuta 01_ddl/01_schemas/001_schemas.sql.
+      comment: Runs 01_ddl/01_schemas/001_schemas.sql.
       changes:
         - sqlFile:
             path: 001_schemas.sql

@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 045-dml-deletes-001-eliminacion-logica-demo
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 02_dml/02_deletes/001_soft_delete_demo.sql
       labels: "dml,deletes"
-      comment: Ejecuta 02_dml/02_deletes/001_soft_delete_demo.sql.
+      comment: Runs 02_dml/02_deletes/001_soft_delete_demo.sql.
       changes:
         - sqlFile:
             path: 001_soft_delete_demo.sql

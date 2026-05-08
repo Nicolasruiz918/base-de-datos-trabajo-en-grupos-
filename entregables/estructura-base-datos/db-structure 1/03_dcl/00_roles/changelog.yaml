@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 048-dcl-roles-001-roles
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 03_dcl/00_roles/001_roles.sql
       labels: "dcl,roles"
-      comment: Ejecuta 03_dcl/00_roles/001_roles.sql.
+      comment: Runs 03_dcl/00_roles/001_roles.sql.
       changes:
         - sqlFile:
             path: 001_roles.sql

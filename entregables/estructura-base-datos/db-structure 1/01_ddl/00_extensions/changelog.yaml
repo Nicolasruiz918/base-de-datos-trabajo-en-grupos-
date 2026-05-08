@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 001-ddl-extensions-001-extensions
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/00_extensions/001_extensions.sql
       labels: "ddl,extensions"
-      comment: Ejecuta 01_ddl/00_extensions/001_extensions.sql.
+      comment: Runs 01_ddl/00_extensions/001_extensions.sql.
       changes:
         - sqlFile:
             path: 001_extensions.sql

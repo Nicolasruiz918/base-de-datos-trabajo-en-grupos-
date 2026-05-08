@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 035-ddl-indexes-001-domain-indexes
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/09_indexes/001_domain_indexes.sql
       labels: "ddl,indexes"
-      comment: Ejecuta 01_ddl/09_indexes/001_domain_indexes.sql.
+      comment: Runs 01_ddl/09_indexes/001_domain_indexes.sql.
       changes:
         - sqlFile:
             path: 001_domain_indexes.sql

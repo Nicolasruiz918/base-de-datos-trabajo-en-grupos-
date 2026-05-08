@@ -1,9 +1,9 @@
-﻿SET search_path TO billing, public;
+SET search_path TO billing, public;
 
 CREATE TABLE IF NOT EXISTS pre_invoice (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   stay_id UUID NOT NULL,
-  room_reservationtion_id UUID NOT NULL,
+  room_reservation_id UUID NOT NULL,
   customer_id UUID NOT NULL,
   subtotal NUMERIC(12,2) NOT NULL DEFAULT 0,
   tax NUMERIC(12,2) NOT NULL DEFAULT 0,
@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS pre_invoice (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT ck_pre_invoice_valuees CHECK (subtotal >= 0 AND tax >= 0 AND discount >= 0 AND total >= 0),
+  CONSTRAINT ck_pre_invoice_values CHECK (subtotal >= 0 AND tax >= 0 AND discount >= 0 AND total >= 0),
   CONSTRAINT fk_pre_invoice_stay FOREIGN KEY (stay_id) REFERENCES service_delivery.stay(id),
-  CONSTRAINT fk_pre_invoice_reservation FOREIGN KEY (room_reservationtion_id) REFERENCES service_delivery.room_reservationtion(id),
+  CONSTRAINT fk_pre_invoice_reservation FOREIGN KEY (room_reservation_id) REFERENCES service_delivery.room_reservation(id),
   CONSTRAINT fk_pre_invoice_customer FOREIGN KEY (customer_id) REFERENCES configuration.customer(id)
 );
 
@@ -40,14 +40,14 @@ CREATE TABLE IF NOT EXISTS invoice (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT ck_invoice_valuees CHECK (subtotal >= 0 AND tax >= 0 AND discount >= 0 AND total >= 0),
+  CONSTRAINT ck_invoice_values CHECK (subtotal >= 0 AND tax >= 0 AND discount >= 0 AND total >= 0),
   CONSTRAINT fk_invoice_customer FOREIGN KEY (customer_id) REFERENCES configuration.customer(id),
   CONSTRAINT fk_invoice_stay FOREIGN KEY (stay_id) REFERENCES service_delivery.stay(id)
 );
 
 CREATE TABLE IF NOT EXISTS partial_payment (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  room_reservationtion_id UUID,
+  room_reservation_id UUID,
   invoice_id UUID,
   payment_method_id UUID NOT NULL,
   value NUMERIC(12,2) NOT NULL,
@@ -61,8 +61,8 @@ CREATE TABLE IF NOT EXISTS partial_payment (
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
   CONSTRAINT ck_payment_value CHECK (value > 0),
-  CONSTRAINT ck_payment_origen CHECK (room_reservationtion_id IS NOT NULL OR invoice_id IS NOT NULL),
-  CONSTRAINT fk_payment_reservation FOREIGN KEY (room_reservationtion_id) REFERENCES service_delivery.room_reservationtion(id),
+  CONSTRAINT ck_payment_source CHECK (room_reservation_id IS NOT NULL OR invoice_id IS NOT NULL),
+  CONSTRAINT fk_payment_reservation FOREIGN KEY (room_reservation_id) REFERENCES service_delivery.room_reservation(id),
   CONSTRAINT fk_payment_invoice FOREIGN KEY (invoice_id) REFERENCES billing.invoice(id),
   CONSTRAINT fk_payment_payment_method FOREIGN KEY (payment_method_id) REFERENCES configuration.payment_method(id)
 );
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS purchase_detail (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT ck_detail_valuees CHECK (quantity > 0 AND unit_value >= 0 AND total_value >= 0),
+  CONSTRAINT ck_detail_values CHECK (quantity > 0 AND unit_value >= 0 AND total_value >= 0),
   CONSTRAINT ck_detail_item CHECK (product_id IS NOT NULL OR service_id IS NOT NULL),
   CONSTRAINT fk_detail_invoice FOREIGN KEY (invoice_id) REFERENCES billing.invoice(id),
   CONSTRAINT fk_detail_product FOREIGN KEY (product_id) REFERENCES inventory.product(id),

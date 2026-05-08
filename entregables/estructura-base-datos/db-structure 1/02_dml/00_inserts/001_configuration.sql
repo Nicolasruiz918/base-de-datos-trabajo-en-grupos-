@@ -1,5 +1,5 @@
-﻿INSERT INTO configuration.company (name, nit, legal_name, phone, email, address, website)
-VALUES ('Hotel Demo', '900000000-1', 'Hotel Demo S.A.S.', '3000000000', 'contacto@hoteldemo.local', 'Direccion principal', 'https://hoteldemo.local')
+INSERT INTO configuration.company (name, nit, legal_name, phone, email, address, website)
+VALUES ('Hotel Demo', '900000000-1', 'Hotel Demo S.A.S.', '3000000000', 'contact@hoteldemo.local', 'Main address', 'https://hoteldemo.local')
 ON CONFLICT (nit) DO UPDATE
 SET name = EXCLUDED.name,
     legal_name = EXCLUDED.legal_name,
@@ -12,10 +12,10 @@ INSERT INTO configuration.day_type (name, description, applies_season, applies_h
 SELECT v.name, v.description, v.applies_season, v.applies_holiday, v.applies_special
 FROM (
   VALUES
-    ('WEEKDAY', 'Dia operativo regular entre semana', false, false, false),
-    ('WEEKEND', 'Dia de fin de semana', false, false, false),
-    ('HOLIDAY', 'Dia feriado', false, true, false),
-    ('HIGH_SEASON', 'Dia con regla de temporada alta', true, false, false)
+    ('WEEKDAY', 'Regular weekday', false, false, false),
+    ('WEEKEND', 'Weekend day', false, false, false),
+    ('HOLIDAY', 'Holiday', false, true, false),
+    ('HIGH_SEASON', 'High season day', true, false, false)
 ) AS v(name, description, applies_season, applies_holiday, applies_special)
 WHERE NOT EXISTS (
   SELECT 1
@@ -26,9 +26,9 @@ WHERE NOT EXISTS (
 
 INSERT INTO configuration.payment_method (name, description, requires_reference, allows_partial_payment)
 VALUES
-  ('CASH', 'Pago en efectivo', false, true),
-  ('CARD', 'Pago con tarjeta debito o credito', true, true),
-  ('BANK_TRANSFER', 'Pago por transferencia bancaria', true, true)
+  ('CASH', 'Cash payment', false, true),
+  ('CARD', 'Debit or credit card payment', true, true),
+  ('BANK_TRANSFER', 'Bank transfer payment', true, true)
 ON CONFLICT (name) DO UPDATE
 SET description = EXCLUDED.description,
     requires_reference = EXCLUDED.requires_reference,
@@ -48,7 +48,7 @@ SET name = EXCLUDED.name,
 INSERT INTO configuration.person (document_type, document_number, name, last_name, phone, email)
 VALUES
   ('CC', '52530001', 'Ariel', 'Administrator', '3005253001', 'ariel5253@example.local'),
-  ('CC', '52530002', 'Recepcion', 'Demo', '3005253002', 'recepcion@example.local')
+  ('CC', '52530002', 'Reception', 'Demo', '3005253002', 'recepcion@example.local')
 ON CONFLICT (document_type, document_number) DO UPDATE
 SET name = EXCLUDED.name,
     last_name = EXCLUDED.last_name,

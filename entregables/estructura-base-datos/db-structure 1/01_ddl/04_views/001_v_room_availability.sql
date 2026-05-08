@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE VIEW distribution.v_room_availability AS
+CREATE OR REPLACE VIEW distribution.v_room_availability AS
 SELECT
   h.id AS room_id,
   s.name AS site,
@@ -7,7 +7,7 @@ SELECT
   th.name AS room_type,
   h.capacity,
   eh.name AS room_status,
-  eh.allows_reservationtion,
+  eh.allows_reservation,
   eh.allows_check_in,
   h.status
 FROM distribution.room h

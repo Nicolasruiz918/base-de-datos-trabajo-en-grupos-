@@ -1,5 +1,5 @@
-﻿param(
-  [string]$DatabaseName = "sistema_hotelero",
+param(
+  [string]$DatabaseName = "hotel_management",
   [string]$User = "admin",
   [string]$Password = "admin123",
   [string]$HostName = "localhost",

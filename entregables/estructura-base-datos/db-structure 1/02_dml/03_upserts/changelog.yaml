@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 046-dml-upserts-001-upsert-catalogs
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 02_dml/03_upserts/001_upsert_catalogs.sql
       labels: "dml,upserts"
-      comment: Ejecuta 02_dml/03_upserts/001_upsert_catalogs.sql.
+      comment: Runs 02_dml/03_upserts/001_upsert_catalogs.sql.
       changes:
         - sqlFile:
             path: 001_upsert_catalogs.sql

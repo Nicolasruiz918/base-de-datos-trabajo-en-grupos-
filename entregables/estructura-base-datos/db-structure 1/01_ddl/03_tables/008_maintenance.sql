@@ -1,4 +1,4 @@
-﻿SET search_path TO maintenance, public;
+SET search_path TO maintenance, public;
 
 CREATE TABLE IF NOT EXISTS room_maintenance (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS renovation_maintenance (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT ck_maintenance_presupuesto CHECK (estimated_budget IS NULL OR estimated_budget >= 0),
+  CONSTRAINT ck_maintenance_budget CHECK (estimated_budget IS NULL OR estimated_budget >= 0),
   CONSTRAINT fk_renovation_maintenance_maintenance FOREIGN KEY (room_maintenance_id) REFERENCES maintenance.room_maintenance(id)
 );
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS maintenance_dashboard (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT ck_maintenance_dashboard_valuees CHECK (
+  CONSTRAINT ck_maintenance_dashboard_values CHECK (
     total_rooms >= 0
     AND available_rooms >= 0
     AND occupied_rooms >= 0

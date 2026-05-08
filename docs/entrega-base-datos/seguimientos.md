@@ -27,12 +27,12 @@
 | Planificacion e infraestructura | Nicolas / Emily  | Documentacion base, ADR, Docker, PostgreSQL y Liquibase preparados.              |
 | Modelo de datos                 | Brayan / Nicolas | DDL organizado por dominios y objetos avanzados separados por archivo.           |
 | Carga de datos y seguridad      | Frenier / Brayan | DML, DCL y TCL organizados con rollbacks.                                        |
-| Validacion final                | Emily            | Pendiente de ejecucion real en Docker o ambiente local con PostgreSQL/Liquibase. |
+| Validacion final                | Emily            | Liquibase y smoke test ejecutados correctamente en Docker. |
 
 ## Pendiente de validacion
 
 - Ejecutar `docker compose up liquibase` desde la carpeta `docker`.
-- Ejecutar `scripts/smoke-test.sql` contra la base `sistema_hotelero`.
+- Ejecutar `scripts/smoke-test.sql` contra la base `hotel_management`.
 - Validar autenticacion con usuario `ariel5253`.
 - Registrar resultado de ejecucion en este documento cuando se tenga la evidencia.
 
@@ -45,4 +45,5 @@
 | Estados de habitacion | 6                                                                 |
 | Tipos de habitacion   | 3                                                                 |
 | Modulos de seguridad  | 8                                                                 |
-| Usuario `ariel5253` | 1 registro en `seguridad.usuario` y login PostgreSQL disponible |
+| Usuario `ariel5253` | 1 registro en `security.user_account` y login PostgreSQL disponible |
+

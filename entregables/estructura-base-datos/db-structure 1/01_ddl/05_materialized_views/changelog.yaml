@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 033-ddl-materialized-views-001-mv-ingresos-por-mes
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/05_materialized_views/001_mv_monthly_revenue.sql
       labels: "ddl,materialized-views"
-      comment: Ejecuta 01_ddl/05_materialized_views/001_mv_monthly_revenue.sql.
+      comment: Runs 01_ddl/05_materialized_views/001_mv_monthly_revenue.sql.
       changes:
         - sqlFile:
             path: 001_mv_monthly_revenue.sql
@@ -21,10 +21,10 @@
             stripComments: false
   - changeSet:
       id: 034-ddl-materialized-views-002-mv-ocupacion-por-site
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/05_materialized_views/002_mv_site_occupancy.sql
       labels: "ddl,materialized-views"
-      comment: Ejecuta 01_ddl/05_materialized_views/002_mv_site_occupancy.sql.
+      comment: Runs 01_ddl/05_materialized_views/002_mv_site_occupancy.sql.
       changes:
         - sqlFile:
             path: 002_mv_site_occupancy.sql

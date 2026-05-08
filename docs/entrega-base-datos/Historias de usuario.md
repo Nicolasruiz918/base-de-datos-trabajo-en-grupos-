@@ -170,13 +170,16 @@ Se identifican los 8 dominios oficiales del sistema: parametrizacion, seguridad,
 
 **Descripcion**
 
-Los ADR registran contexto, decision, alternativas evaluadas y consecuencias. En esta entrega justifican la migracion desde MySQL hacia PostgreSQL, el uso de UUID, los valores de estado, la auditoria, la politica de eliminacion y el idioma tecnico de la base.
+Los ADR registran contexto, decision, alternativas evaluadas y consecuencias. En esta entrega justifican la migracion desde MySQL hacia PostgreSQL, el uso de UUID, los valores de estado, la auditoria, la politica de eliminacion, el idioma tecnico de la base, la separacion por dominios, el ambiente Docker con Liquibase y el uso de schemas por dominio.
 
 **Entregables**
 
 - `docs/entrega-base-datos/ADR/ADR-001-migracion-postgresql.md`.
 - `docs/entrega-base-datos/ADR/ADR-002-identificadores-estados-auditoria-eliminacion.md`.
 - `docs/entrega-base-datos/ADR/ADR-003-cambio-idioma-base-datos-ingles.md`.
+- `docs/entrega-base-datos/ADR/ADR-004-separacion-base-datos-por-dominios.md`.
+- `docs/entrega-base-datos/ADR/ADR-005-docker-compose-liquibase.md`.
+- `docs/entrega-base-datos/ADR/ADR-006-uso-schemas-por-dominio.md`.
 
 **Criterios de aceptacion**
 
@@ -185,6 +188,9 @@ Los ADR registran contexto, decision, alternativas evaluadas y consecuencias. En
 - El uso de UUID queda explicado.
 - La politica de eliminacion logica queda documentada.
 - La decision de idioma tecnico en ingles queda registrada.
+- La separacion de la base por dominios queda registrada.
+- La implementacion con Docker Compose y Liquibase queda registrada.
+- El uso de schemas PostgreSQL por dominio queda registrado.
 - Los documentos estan en espanol.
 
 **Checklist**
@@ -193,6 +199,9 @@ Los ADR registran contexto, decision, alternativas evaluadas y consecuencias. En
 - [ ] Actualizar ADR de PostgreSQL.
 - [ ] Actualizar ADR de UUID, status, auditoria y eliminacion.
 - [ ] Actualizar ADR de idioma tecnico.
+- [ ] Crear ADR de separacion por dominios.
+- [ ] Crear ADR de Docker Compose con Liquibase.
+- [ ] Crear ADR de schemas por dominio.
 - [ ] Verificar que los ADR no contradigan la estructura real.
 
 **Responsable sugerido:** Nicolas Estid Ruiz Sastoque
@@ -241,7 +250,7 @@ La historia define la ruta para integrar validaciones automaticas. Aunque la ent
 
 **Descripcion**
 
-El ambiente debe levantar una base PostgreSQL para `sistema_hotelero`, con healthcheck, red, volumen persistente y conexion disponible para Liquibase. Esto evita diferencias entre equipos al ejecutar la entrega.
+El ambiente debe levantar una base PostgreSQL para `hotel_management`, con healthcheck, red, volumen persistente y conexion disponible para Liquibase. Esto evita diferencias entre equipos al ejecutar la entrega.
 
 **Entregables**
 
@@ -252,7 +261,7 @@ El ambiente debe levantar una base PostgreSQL para `sistema_hotelero`, con healt
 **Criterios de aceptacion**
 
 - PostgreSQL levanta con Docker.
-- La base `sistema_hotelero` queda disponible.
+- La base `hotel_management` queda disponible.
 - El puerto local `25432` queda documentado.
 - El healthcheck confirma que PostgreSQL esta listo.
 - Liquibase puede conectarse al servicio `postgres`.
@@ -925,5 +934,6 @@ La validacion final ejecuta Docker, Liquibase y smoke test sobre una base limpia
 **Priorizacion MoSCoW:** Must have
 
 ---
+
 
 

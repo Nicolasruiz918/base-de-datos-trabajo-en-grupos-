@@ -9,7 +9,7 @@ Este documento consolida la estructura de base de datos, el orden de carga, la e
 | Elemento | Valor |
 |----------|-------|
 | Motor | PostgreSQL 16 |
-| Base de datos | `sistema_hotelero` |
+| Base de datos | `hotel_management` |
 | Usuario Docker | `admin` |
 | Password Docker | `admin123` |
 | Puerto local | `25432` |
@@ -67,7 +67,7 @@ entregables/estructura-base-datos/db-structure 1/
 | 10 | `01_ddl/09_indexes` | Crea indices de busqueda, unicidad y soporte a `ON CONFLICT`. |
 | 11 | `02_dml` | Carga datos en orden padre-hijo. |
 | 12 | `03_dcl` | Crea roles, grants y policies. |
-| 13 | `04_tcl` | Ejecuta transacciones o recuperaciones controladas. |
+| 13 | `04_tcl` | Runs transacciones o recuperaciones controladas. |
 
 ## Changelogs disponibles
 
@@ -101,7 +101,7 @@ docker-compose up liquibase
 Con PostgreSQL levantado:
 
 ```bash
-docker-compose exec postgres psql -U admin -d sistema_hotelero -f /scripts/smoke-test.sql
+docker-compose exec postgres psql -U admin -d hotel_management -f /scripts/smoke-test.sql
 ```
 
 El smoke test debe validar como minimo:
@@ -145,3 +145,11 @@ Checklist de cierre:
 - [ ] README, HU, ADR, DoR/DoD, matriz, plan y seguimiento estan actualizados.
 - [ ] La entrega pasa de `dev` a `qa` y luego a `main`.
 
+
+## Acceso a la base de datos
+
+Desde `entregables/estructura-base-datos/db-structure 1/docker`:
+
+```bash
+docker-compose exec postgres psql -U admin -d hotel_management
+```

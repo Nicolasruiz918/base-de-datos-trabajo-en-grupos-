@@ -1,27 +1,27 @@
-﻿services:
+services:
   postgres:
     image: postgres:16
-    container_name: sistema_hotelero_postgres
+    container_name: hotel_management_postgres
     environment:
-      POSTGRES_DB: sistema_hotelero
+      POSTGRES_DB: hotel_management
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin123
     ports:
       - "25432:5432"
     volumes:
-      - sistema_hotelero_pgdata:/var/lib/postgresql/data
+      - hotel_management_pgdata:/var/lib/postgresql/data
       - ../scripts:/scripts:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U admin -d sistema_hotelero"]
+      test: ["CMD-SHELL", "pg_isready -U admin -d hotel_management"]
       interval: 10s
       timeout: 5s
       retries: 5
     networks:
-      - sistema_hotelero_network
+      - hotel_management_network
 
   liquibase:
     image: liquibase/liquibase:4.25
-    container_name: sistema_hotelero_liquibase
+    container_name: hotel_management_liquibase
     depends_on:
       postgres:
         condition: service_healthy
@@ -37,16 +37,16 @@
     environment:
       LIQUIBASE_COMMAND_USERNAME: admin
       LIQUIBASE_COMMAND_PASSWORD: admin123
-      LIQUIBASE_COMMAND_URL: jdbc:postgresql://postgres:5432/sistema_hotelero
+      LIQUIBASE_COMMAND_URL: jdbc:postgresql://postgres:5432/hotel_management
     command: ["--defaultsFile=/liquibase/liquibase.properties", "update"]
     networks:
-      - sistema_hotelero_network
+      - hotel_management_network
 
 volumes:
-  sistema_hotelero_pgdata:
+  hotel_management_pgdata:
 
 networks:
-  sistema_hotelero_network:
+  hotel_management_network:
     driver: bridge
 
 

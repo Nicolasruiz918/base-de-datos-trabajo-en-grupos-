@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 047-dml-patches-001-patch-refresh-reportes
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 02_dml/04_patches/001_patch_refresh_reports.sql
       labels: "dml,patches"
-      comment: Ejecuta 02_dml/04_patches/001_patch_refresh_reports.sql.
+      comment: Runs 02_dml/04_patches/001_patch_refresh_reports.sql.
       changes:
         - sqlFile:
             path: 001_patch_refresh_reports.sql

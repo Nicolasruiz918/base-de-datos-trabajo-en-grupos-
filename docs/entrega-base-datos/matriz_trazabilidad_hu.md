@@ -21,7 +21,7 @@ Esta matriz relaciona las historias de usuario tecnicas con dominios, entregable
 | Repositorio | HU-01 | Repositorio, ramas `main`, `qa`, `dev` | Ninguna |
 | Documentacion | HU-02 | Plan, seguimiento, planning, roles | HU-01 |
 | Analisis | HU-03 | `analisis_dominios.md`, matriz de trazabilidad | HU-02 |
-| ADR | HU-04 | ADR PostgreSQL, UUID/auditoria, idioma tecnico | HU-03 |
+| ADR | HU-04 | ADR PostgreSQL, UUID/auditoria, idioma tecnico, dominios, Docker/Liquibase y schemas | HU-03 |
 | Automatizacion | HU-05 | `.github/workflows` si aplica | HU-01 |
 | Ambiente | HU-06 | Docker Compose, PostgreSQL, Liquibase properties | HU-01 |
 | Liquibase | HU-07 | Changelog maestro global y por bloques | HU-06 |
@@ -62,6 +62,7 @@ Las foreign keys no se rompen por subir archivos al repositorio. Se rompen si se
 - `flujo_git_por_historias.md`
 - `plan_subida_hu_tecnicas.csv`
 - `guia_tecnica_ejecucion.md`
+
 
 
 

@@ -1,4 +1,4 @@
-﻿SET search_path TO distribution, public;
+SET search_path TO distribution, public;
 
 CREATE TABLE IF NOT EXISTS site (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS room_status (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name VARCHAR(80) NOT NULL,
   description VARCHAR(255),
-  allows_reservationtion BOOLEAN NOT NULL DEFAULT false,
+  allows_reservation BOOLEAN NOT NULL DEFAULT false,
   allows_check_in BOOLEAN NOT NULL DEFAULT false,
   created_by UUID,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS room_catalog (
   room_id UUID NOT NULL,
   title VARCHAR(160) NOT NULL,
   description TEXT,
-  price_base NUMERIC(12,2) NOT NULL DEFAULT 0,
+  base_price NUMERIC(12,2) NOT NULL DEFAULT 0,
   visible BOOLEAN NOT NULL DEFAULT true,
   created_by UUID,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS room_catalog (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT ck_catalog_price CHECK (price_base >= 0),
+  CONSTRAINT ck_catalog_price CHECK (base_price >= 0),
   CONSTRAINT fk_room_catalog_room FOREIGN KEY (room_id) REFERENCES distribution.room(id)
 );
 

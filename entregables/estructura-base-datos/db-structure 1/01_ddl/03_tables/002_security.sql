@@ -1,4 +1,4 @@
-﻿SET search_path TO security, public;
+SET search_path TO security, public;
 
 CREATE TABLE IF NOT EXISTS role (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -74,10 +74,10 @@ CREATE TABLE IF NOT EXISTS user_account (
   CONSTRAINT fk_user_account_person FOREIGN KEY (person_id) REFERENCES configuration.person(id)
 );
 
-CREATE TABLE IF NOT EXISTS user_rolee (
+CREATE TABLE IF NOT EXISTS user_role (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID NOT NULL,
-  rolee_id UUID NOT NULL,
+  role_id UUID NOT NULL,
   created_by UUID,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
   updated_by UUID,
@@ -85,13 +85,13 @@ CREATE TABLE IF NOT EXISTS user_rolee (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT fk_user_rolee_user_account FOREIGN KEY (user_id) REFERENCES security.user_account(id),
-  CONSTRAINT fk_user_rolee_role FOREIGN KEY (rolee_id) REFERENCES security.role(id)
+  CONSTRAINT fk_user_role_user_account FOREIGN KEY (user_id) REFERENCES security.user_account(id),
+  CONSTRAINT fk_user_role_role FOREIGN KEY (role_id) REFERENCES security.role(id)
 );
 
-CREATE TABLE IF NOT EXISTS rolee_permission (
+CREATE TABLE IF NOT EXISTS role_permission (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  rolee_id UUID NOT NULL,
+  role_id UUID NOT NULL,
   permission_id UUID NOT NULL,
   created_by UUID,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
@@ -100,8 +100,8 @@ CREATE TABLE IF NOT EXISTS rolee_permission (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT fk_rolee_permission_role FOREIGN KEY (rolee_id) REFERENCES security.role(id),
-  CONSTRAINT fk_rolee_permission_permission FOREIGN KEY (permission_id) REFERENCES security.permission(id)
+  CONSTRAINT fk_role_permission_role FOREIGN KEY (role_id) REFERENCES security.role(id),
+  CONSTRAINT fk_role_permission_permission FOREIGN KEY (permission_id) REFERENCES security.permission(id)
 );
 
 CREATE TABLE IF NOT EXISTS module_view (

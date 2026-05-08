@@ -1,4 +1,4 @@
-﻿SET search_path TO notification, public;
+SET search_path TO notification, public;
 
 CREATE TABLE IF NOT EXISTS promotion (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS promotion (
 CREATE TABLE IF NOT EXISTS alert (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   customer_id UUID,
-  room_reservationtion_id UUID,
+  room_reservation_id UUID,
   title VARCHAR(160) NOT NULL,
   mensaje TEXT NOT NULL,
   channel notification.notification_channel NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS alert (
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
   CONSTRAINT fk_alert_customer FOREIGN KEY (customer_id) REFERENCES configuration.customer(id),
-  CONSTRAINT fk_alert_reservation FOREIGN KEY (room_reservationtion_id) REFERENCES service_delivery.room_reservationtion(id)
+  CONSTRAINT fk_alert_reservation FOREIGN KEY (room_reservation_id) REFERENCES service_delivery.room_reservation(id)
 );
 
 CREATE TABLE IF NOT EXISTS term_condition (
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS customer_loyalty (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT ck_fidelizacion_points CHECK (points >= 0),
+  CONSTRAINT ck_loyalty_points CHECK (points >= 0),
   CONSTRAINT fk_customer_loyalty FOREIGN KEY (customer_id) REFERENCES configuration.customer(id)
 );
 

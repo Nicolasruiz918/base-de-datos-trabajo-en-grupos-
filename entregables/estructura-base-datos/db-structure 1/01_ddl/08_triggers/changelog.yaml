@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 022-ddl-triggers-001-trg-room-capacity
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/08_triggers/001_trg_room_capacity.sql
       labels: "ddl,triggers"
-      comment: Ejecuta 01_ddl/08_triggers/001_trg_room_capacity.sql.
+      comment: Runs 01_ddl/08_triggers/001_trg_room_capacity.sql.
       changes:
         - sqlFile:
             path: 001_trg_room_capacity.sql
@@ -20,31 +20,31 @@
             endDelimiter: ;
             stripComments: false
   - changeSet:
-      id: 023-ddl-triggers-002-trg-reservation-no-solapada
-      author: sistema-hotelero
-      logicalFilePath: 01_ddl/08_triggers/002_trg_reservationtion_no_overlap.sql
+      id: 023-ddl-triggers-002-trg-reservation-no-overlap
+      author: hotel-management
+      logicalFilePath: 01_ddl/08_triggers/002_trg_reservation_no_overlap.sql
       labels: "ddl,triggers"
-      comment: Ejecuta 01_ddl/08_triggers/002_trg_reservationtion_no_overlap.sql.
+      comment: Runs 01_ddl/08_triggers/002_trg_reservation_no_overlap.sql.
       changes:
         - sqlFile:
-            path: 002_trg_reservationtion_no_overlap.sql
+            path: 002_trg_reservation_no_overlap.sql
             relativeToChangelogFile: true
             splitStatements: false
             endDelimiter: ;
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/01_ddl/08_triggers/002_trg_reservationtion_no_overlap.rollback.sql
+            path: ../../05_rollbacks/01_ddl/08_triggers/002_trg_reservation_no_overlap.rollback.sql
             relativeToChangelogFile: true
             splitStatements: true
             endDelimiter: ;
             stripComments: false
   - changeSet:
       id: 024-ddl-triggers-003-trg-venta-product-stock
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/08_triggers/003_trg_product_sale_stock.sql
       labels: "ddl,triggers"
-      comment: Ejecuta 01_ddl/08_triggers/003_trg_product_sale_stock.sql.
+      comment: Runs 01_ddl/08_triggers/003_trg_product_sale_stock.sql.
       changes:
         - sqlFile:
             path: 003_trg_product_sale_stock.sql
@@ -61,10 +61,10 @@
             stripComments: false
   - changeSet:
       id: 025-ddl-triggers-004-trg-pre-invoice-total
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/08_triggers/004_trg_pre_invoice_total.sql
       labels: "ddl,triggers"
-      comment: Ejecuta 01_ddl/08_triggers/004_trg_pre_invoice_total.sql.
+      comment: Runs 01_ddl/08_triggers/004_trg_pre_invoice_total.sql.
       changes:
         - sqlFile:
             path: 004_trg_pre_invoice_total.sql
@@ -81,10 +81,10 @@
             stripComments: false
   - changeSet:
       id: 026-ddl-triggers-005-trg-invoice-total
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/08_triggers/005_trg_invoice_total.sql
       labels: "ddl,triggers"
-      comment: Ejecuta 01_ddl/08_triggers/005_trg_invoice_total.sql.
+      comment: Runs 01_ddl/08_triggers/005_trg_invoice_total.sql.
       changes:
         - sqlFile:
             path: 005_trg_invoice_total.sql
@@ -101,10 +101,10 @@
             stripComments: false
   - changeSet:
       id: 027-ddl-triggers-006-trg-set-updated-at
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/08_triggers/006_trg_set_updated_at.sql
       labels: "ddl,triggers"
-      comment: Ejecuta 01_ddl/08_triggers/006_trg_set_updated_at.sql.
+      comment: Runs 01_ddl/08_triggers/006_trg_set_updated_at.sql.
       changes:
         - sqlFile:
             path: 006_trg_set_updated_at.sql

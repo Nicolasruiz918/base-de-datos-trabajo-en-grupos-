@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 050-dcl-policies-001-rls-policies
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 03_dcl/02_policies/001_rls_policies.sql
       labels: "dcl,policies"
-      comment: Ejecuta 03_dcl/02_policies/001_rls_policies.sql.
+      comment: Runs 03_dcl/02_policies/001_rls_policies.sql.
       changes:
         - sqlFile:
             path: 001_rls_policies.sql

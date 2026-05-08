@@ -1,4 +1,4 @@
-﻿SET search_path TO inventory, public;
+SET search_path TO inventory, public;
 
 CREATE TABLE IF NOT EXISTS supplier (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS product (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT ck_product_valuees CHECK (sale_value >= 0 AND current_stock >= 0 AND minimum_stock >= 0),
+  CONSTRAINT ck_product_values CHECK (sale_value >= 0 AND current_stock >= 0 AND minimum_stock >= 0),
   CONSTRAINT fk_product_supplier FOREIGN KEY (supplier_id) REFERENCES inventory.supplier(id)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS product_sale (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT ck_product_sale_valuees CHECK (quantity > 0 AND unit_value >= 0 AND total_value >= 0),
+  CONSTRAINT ck_product_sale_values CHECK (quantity > 0 AND unit_value >= 0 AND total_value >= 0),
   CONSTRAINT fk_product_sale_stay FOREIGN KEY (stay_id) REFERENCES service_delivery.stay(id),
   CONSTRAINT fk_product_sale_product FOREIGN KEY (product_id) REFERENCES inventory.product(id)
 );
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS service_sale (
   deleted_by UUID,
   deleted_at TIMESTAMPTZ,
   status configuration.record_status NOT NULL DEFAULT 'ACTIVE',
-  CONSTRAINT ck_service_sale_valuees CHECK (quantity > 0 AND unit_value >= 0 AND total_value >= 0),
+  CONSTRAINT ck_service_sale_values CHECK (quantity > 0 AND unit_value >= 0 AND total_value >= 0),
   CONSTRAINT fk_service_sale_stay FOREIGN KEY (stay_id) REFERENCES service_delivery.stay(id),
   CONSTRAINT fk_service_sale_service FOREIGN KEY (service_id) REFERENCES inventory.service(id)
 );

@@ -1,6 +1,6 @@
-﻿UPDATE service_delivery.room_reservationtion
-SET reservationtion_status = 'PENDING'
-WHERE reservationtion_status = 'CONFIRMED'
+UPDATE service_delivery.room_reservation
+SET reservation_status = 'PENDING'
+WHERE reservation_status = 'CONFIRMED'
   AND status = 'ACTIVE';
 
 UPDATE distribution.room h

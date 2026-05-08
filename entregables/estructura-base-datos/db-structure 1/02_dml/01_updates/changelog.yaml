@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
-      id: 044-dml-updates-001-actualizar-estados-operativos
-      author: sistema-hotelero
+      id: 044-dml-updates-001-update-operational-statuses
+      author: hotel-management
       logicalFilePath: 02_dml/01_updates/001_update_operational_statuses.sql
       labels: "dml,updates"
-      comment: Ejecuta 02_dml/01_updates/001_update_operational_statuses.sql.
+      comment: Runs 02_dml/01_updates/001_update_operational_statuses.sql.
       changes:
         - sqlFile:
             path: 001_update_operational_statuses.sql

@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 051-tcl-transaction-blocks-001-carga-segura
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 04_tcl/00_transaction_blocks/001_safe_load.sql
       labels: "tcl,transaction-blocks"
-      comment: Ejecuta 04_tcl/00_transaction_blocks/001_safe_load.sql.
+      comment: Runs 04_tcl/00_transaction_blocks/001_safe_load.sql.
       changes:
         - sqlFile:
             path: 001_safe_load.sql

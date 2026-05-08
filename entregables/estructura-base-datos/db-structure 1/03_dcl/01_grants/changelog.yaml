@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 049-dcl-grants-001-grants
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 03_dcl/01_grants/001_grants.sql
       labels: "dcl,grants"
-      comment: Ejecuta 03_dcl/01_grants/001_grants.sql.
+      comment: Runs 03_dcl/01_grants/001_grants.sql.
       changes:
         - sqlFile:
             path: 001_grants.sql

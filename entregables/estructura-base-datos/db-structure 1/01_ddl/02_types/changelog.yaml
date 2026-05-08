@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 003-ddl-types-001-domain-types
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 01_ddl/02_types/001_domain_types.sql
       labels: "ddl,types"
-      comment: Ejecuta 01_ddl/02_types/001_domain_types.sql.
+      comment: Runs 01_ddl/02_types/001_domain_types.sql.
       changes:
         - sqlFile:
             path: 001_domain_types.sql

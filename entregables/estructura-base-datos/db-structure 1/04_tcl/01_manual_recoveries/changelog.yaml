@@ -1,10 +1,10 @@
-﻿databaseChangeLog:
+databaseChangeLog:
   - changeSet:
       id: 052-tcl-manual-recoveries-001-refresh-materialized-views
-      author: sistema-hotelero
+      author: hotel-management
       logicalFilePath: 04_tcl/01_manual_recoveries/001_refresh_materialized_views.sql
       labels: "tcl,manual-recoveries"
-      comment: Ejecuta 04_tcl/01_manual_recoveries/001_refresh_materialized_views.sql.
+      comment: Runs 04_tcl/01_manual_recoveries/001_refresh_materialized_views.sql.
       changes:
         - sqlFile:
             path: 001_refresh_materialized_views.sql

@@ -1,11 +1,11 @@
-﻿DO $$
+DO $$
 BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'record_status' AND typnamespace = 'configuration'::regnamespace) THEN
     CREATE TYPE configuration.record_status AS ENUM ('ACTIVE', 'INACTIVE', 'DELETED');
   END IF;
 
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'reservationtion_status' AND typnamespace = 'service_delivery'::regnamespace) THEN
-    CREATE TYPE service_delivery.reservationtion_status AS ENUM ('PENDING', 'CONFIRMED', 'CANCELLED', 'CHECK_IN', 'FINISHED');
+  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'reservation_status' AND typnamespace = 'service_delivery'::regnamespace) THEN
+    CREATE TYPE service_delivery.reservation_status AS ENUM ('PENDING', 'CONFIRMED', 'CANCELLED', 'CHECK_IN', 'FINISHED');
   END IF;
 
   IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'stay_status' AND typnamespace = 'service_delivery'::regnamespace) THEN

@@ -1,4 +1,4 @@
-﻿# Flujo Git por historias de usuario
+# Flujo Git por historias de usuario
 
 ## Objetivo
 
@@ -106,7 +106,7 @@ Validar base de datos antes del PR:
 cd "entregables/estructura-base-datos/db-structure 1/docker"
 docker-compose down -v
 docker-compose up --abort-on-container-exit liquibase
-docker-compose exec postgres psql -U admin -d sistema_hotelero -f /scripts/smoke-test.sql
+docker-compose exec postgres psql -U admin -d hotel_management -f /scripts/smoke-test.sql
 ```
 
 ## Plantilla de descripcion de PR

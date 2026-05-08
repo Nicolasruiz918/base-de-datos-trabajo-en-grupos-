@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION configuration.fn_calculate_reservationtion_price(
+CREATE OR REPLACE FUNCTION configuration.fn_calculate_reservation_price(
   p_room_type_id UUID,
   p_start_date TIMESTAMPTZ,
   p_end_date TIMESTAMPTZ
