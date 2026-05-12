@@ -1,0 +1,163 @@
+databaseChangeLog:
+  - changeSet:
+      id: 036-dml-inserts-001-configuration
+      author: hotel-management
+      logicalFilePath: 02_dml/00_inserts/001_configuration.sql
+      labels: "dml,inserts"
+      comment: Runs 02_dml/00_inserts/001_configuration.sql.
+      changes:
+        - sqlFile:
+            path: 001_configuration.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/00_inserts/001_configuration.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 037-dml-inserts-002-security
+      author: hotel-management
+      logicalFilePath: 02_dml/00_inserts/002_security.sql
+      labels: "dml,inserts"
+      comment: Runs 02_dml/00_inserts/002_security.sql.
+      changes:
+        - sqlFile:
+            path: 002_security.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/00_inserts/002_security.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 038-dml-inserts-003-distribution
+      author: hotel-management
+      logicalFilePath: 02_dml/00_inserts/003_distribution.sql
+      labels: "dml,inserts"
+      comment: Runs 02_dml/00_inserts/003_distribution.sql.
+      changes:
+        - sqlFile:
+            path: 003_distribution.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/00_inserts/003_distribution.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 039-dml-inserts-004-service-delivery
+      author: hotel-management
+      logicalFilePath: 02_dml/00_inserts/004_service_delivery.sql
+      labels: "dml,inserts"
+      comment: Runs 02_dml/00_inserts/004_service_delivery.sql.
+      changes:
+        - sqlFile:
+            path: 004_service_delivery.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/00_inserts/004_service_delivery.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 040-dml-inserts-005-inventory
+      author: hotel-management
+      logicalFilePath: 02_dml/00_inserts/005_inventory.sql
+      labels: "dml,inserts"
+      comment: Runs 02_dml/00_inserts/005_inventory.sql.
+      changes:
+        - sqlFile:
+            path: 005_inventory.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/00_inserts/005_inventory.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 041-dml-inserts-006-billing
+      author: hotel-management
+      logicalFilePath: 02_dml/00_inserts/006_billing.sql
+      labels: "dml,inserts"
+      comment: Runs 02_dml/00_inserts/006_billing.sql.
+      changes:
+        - sqlFile:
+            path: 006_billing.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/00_inserts/006_billing.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 042-dml-inserts-007-notification
+      author: hotel-management
+      logicalFilePath: 02_dml/00_inserts/007_notification.sql
+      labels: "dml,inserts"
+      comment: Runs 02_dml/00_inserts/007_notification.sql.
+      changes:
+        - sqlFile:
+            path: 007_notification.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/00_inserts/007_notification.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 043-dml-inserts-008-maintenance
+      author: hotel-management
+      logicalFilePath: 02_dml/00_inserts/008_maintenance.sql
+      labels: "dml,inserts"
+      comment: Runs 02_dml/00_inserts/008_maintenance.sql.
+      changes:
+        - sqlFile:
+            path: 008_maintenance.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/00_inserts/008_maintenance.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+
+

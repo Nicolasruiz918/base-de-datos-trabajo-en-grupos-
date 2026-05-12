@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 047-dml-patches-001-patch-refresh-reportes
+      author: hotel-management
+      logicalFilePath: 02_dml/04_patches/001_patch_refresh_reports.sql
+      labels: "dml,patches"
+      comment: Runs 02_dml/04_patches/001_patch_refresh_reports.sql.
+      changes:
+        - sqlFile:
+            path: 001_patch_refresh_reports.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/04_patches/001_patch_refresh_reports.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+
+

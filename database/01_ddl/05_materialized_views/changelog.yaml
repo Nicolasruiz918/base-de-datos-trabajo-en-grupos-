@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: 033-ddl-materialized-views-001-mv-ingresos-por-mes
+      author: hotel-management
+      logicalFilePath: 01_ddl/05_materialized_views/001_mv_monthly_revenue.sql
+      labels: "ddl,materialized-views"
+      comment: Runs 01_ddl/05_materialized_views/001_mv_monthly_revenue.sql.
+      changes:
+        - sqlFile:
+            path: 001_mv_monthly_revenue.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/05_materialized_views/001_mv_monthly_revenue.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 034-ddl-materialized-views-002-mv-ocupacion-por-site
+      author: hotel-management
+      logicalFilePath: 01_ddl/05_materialized_views/002_mv_site_occupancy.sql
+      labels: "ddl,materialized-views"
+      comment: Runs 01_ddl/05_materialized_views/002_mv_site_occupancy.sql.
+      changes:
+        - sqlFile:
+            path: 002_mv_site_occupancy.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/05_materialized_views/002_mv_site_occupancy.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+
+

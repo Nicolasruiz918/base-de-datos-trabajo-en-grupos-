@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 044-dml-updates-001-update-operational-statuses
+      author: hotel-management
+      logicalFilePath: 02_dml/01_updates/001_update_operational_statuses.sql
+      labels: "dml,updates"
+      comment: Runs 02_dml/01_updates/001_update_operational_statuses.sql.
+      changes:
+        - sqlFile:
+            path: 001_update_operational_statuses.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/01_updates/001_update_operational_statuses.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+
+

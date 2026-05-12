@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS security.module_view CASCADE;
+DROP TABLE IF EXISTS security.role_permission CASCADE;
+DROP TABLE IF EXISTS security.user_role CASCADE;
+DROP TABLE IF EXISTS security.user_account CASCADE;
+DROP TABLE IF EXISTS security.system_view CASCADE;
+DROP TABLE IF EXISTS security.module CASCADE;
+DROP TABLE IF EXISTS security.permission CASCADE;
+DROP TABLE IF EXISTS security.role CASCADE;
+
+
