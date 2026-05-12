@@ -15,12 +15,12 @@ Este documento consolida la estructura de base de datos, el orden de carga, la e
 | Puerto local | `25432` |
 | Usuario controlado | `ariel5253` |
 | Password usuario controlado | `ariel5253` |
-| Changelog maestro | `changelog/changelog-master.yaml` |
+| Changelog maestro | `database/changelog-master.yaml` |
 
 ## Estructura de carpetas
 
 ```text
-entregables/estructura-base-datos/db-structure 1/
+database/
   01_ddl/
     00_extensions/
     01_schemas/
@@ -55,16 +55,16 @@ entregables/estructura-base-datos/db-structure 1/
 
 | Orden | Carpeta | Motivo |
 |-------|---------|--------|
-| 1 | `01_ddl/00_extensions` | Habilita capacidades como `pgcrypto` y `citext`. |
-| 2 | `01_ddl/01_schemas` | Crea los 8 schemas oficiales. |
-| 3 | `01_ddl/02_types` | Crea tipos o estados usados por tablas. |
-| 4 | `01_ddl/03_tables` | Crea tablas, PK, FKs, constraints y auditoria. |
-| 5 | `01_ddl/06_functions` | Crea funciones usadas por consultas o procesos. |
-| 6 | `01_ddl/07_procedures` | Crea procesos de negocio y mantenimiento. |
-| 7 | `01_ddl/08_triggers` | Crea validaciones automaticas sobre tablas existentes. |
-| 8 | `01_ddl/04_views` | Crea consultas consolidadas. |
-| 9 | `01_ddl/05_materialized_views` | Crea reportes materializados. |
-| 10 | `01_ddl/09_indexes` | Crea indices de busqueda, unicidad y soporte a `ON CONFLICT`. |
+| 1 | `database/01_ddl/00_extensions` | Habilita capacidades como `pgcrypto` y `citext`. |
+| 2 | `database/01_ddl/01_schemas` | Crea los 8 schemas oficiales. |
+| 3 | `database/01_ddl/02_types` | Crea tipos o estados usados por tablas. |
+| 4 | `database/01_ddl/03_tables` | Crea tablas, PK, FKs, constraints y auditoria. |
+| 5 | `database/01_ddl/06_functions` | Crea funciones usadas por consultas o procesos. |
+| 6 | `database/01_ddl/07_procedures` | Crea procesos de negocio y mantenimiento. |
+| 7 | `database/01_ddl/08_triggers` | Crea validaciones automaticas sobre tablas existentes. |
+| 8 | `database/01_ddl/04_views` | Crea consultas consolidadas. |
+| 9 | `database/01_ddl/05_materialized_views` | Crea reportes materializados. |
+| 10 | `database/01_ddl/09_indexes` | Crea indices de busqueda, unicidad y soporte a `ON CONFLICT`. |
 | 11 | `02_dml` | Carga datos en orden padre-hijo. |
 | 12 | `03_dcl` | Crea roles, grants y policies. |
 | 13 | `04_tcl` | Runs transacciones o recuperaciones controladas. |
@@ -73,16 +73,16 @@ entregables/estructura-base-datos/db-structure 1/
 
 | Uso | Archivo |
 |-----|---------|
-| Ejecucion completa con Liquibase | `changelog/changelog-master.yaml` |
-| Ejecucion completa con psql | `changelog/changelog-master.sql` |
-| DDL | `01_ddl/changelog-master.yaml` |
-| DML | `02_dml/changelog-master.yaml` |
-| DCL | `03_dcl/changelog-master.yaml` |
-| TCL | `04_tcl/changelog-master.yaml` |
+| Ejecucion completa con Liquibase | `database/changelog-master.yaml` |
+| Ejecucion completa con psql | `database/changelog-master.sql` |
+| DDL | `database/01_ddl/changelog-master.yaml` |
+| DML | `database/02_dml/changelog-master.yaml` |
+| DCL | `database/03_dcl/changelog-master.yaml` |
+| TCL | `database/04_tcl/changelog-master.yaml` |
 
 ## Ejecucion con Docker y Liquibase
 
-Desde `entregables/estructura-base-datos/db-structure 1/docker`:
+Desde `database`:
 
 ```bash
 docker-compose down -v
@@ -148,8 +148,18 @@ Checklist de cierre:
 
 ## Acceso a la base de datos
 
-Desde `entregables/estructura-base-datos/db-structure 1/docker`:
+Desde `database`:
 
 ```bash
 docker-compose exec postgres psql -U admin -d hotel_management
 ```
+## Separacion de carpetas
+
+La documentacion de la entrega vive en `docs/` y queda preparada para un repositorio de documentacion.
+
+El paquete ejecutable de base de datos vive en `database/` y queda preparado para un repositorio de base de datos.
+
+Esta separacion evita mezclar ADR, HU, plan y seguimiento con scripts SQL, Docker, Liquibase y rollbacks, y permite subir cada bloque a un repositorio diferente.
+
+
+

@@ -12,7 +12,8 @@ Esta matriz relaciona las historias de usuario tecnicas con dominios, entregable
 - `HU-13` a `HU-14`: crean objetos avanzados.
 - `HU-15` a `HU-18`: cargan datos en orden seguro.
 - `HU-19` a `HU-22`: crean permisos, policies y transacciones.
-- `HU-23`: valida la ejecucion completa.
+- `HU-23`: separa documentacion y base de datos para repositorios diferentes.
+- `HU-24`: valida la ejecucion completa y cierre documental.
 
 ## Trazabilidad por bloque
 
@@ -40,7 +41,8 @@ Esta matriz relaciona las historias de usuario tecnicas con dominios, entregable
 | DCL | HU-20 | Grants | HU-19, HU-09 |
 | DCL | HU-21 | Policies | HU-20 |
 | TCL | HU-22 | Bloques transaccionales y recuperacion | HU-15 a HU-18 |
-| Validacion | HU-23 | Smoke test y cierre documental | HU-01 a HU-22 |
+| Estructura | HU-23 | Separacion `docs/` y `database/` para repositorios diferentes, ADR-007, README actualizado | HU-22 |
+| Validacion | HU-24 | Smoke test, Liquibase, FKs y cierre documental | HU-01 a HU-23 |
 
 ## Regla de foreign keys
 
@@ -54,7 +56,8 @@ Las foreign keys no se rompen por subir archivos al repositorio. Se rompen si se
 6. DML en orden padre-hijo.
 7. DCL.
 8. TCL.
-9. Smoke test.
+9. Separacion documental/base de datos.
+10. Smoke test.
 
 ## Documentos de apoyo
 
@@ -62,7 +65,3 @@ Las foreign keys no se rompen por subir archivos al repositorio. Se rompen si se
 - `flujo_git_por_historias.md`
 - `plan_subida_hu_tecnicas.csv`
 - `guia_tecnica_ejecucion.md`
-
-
-
-

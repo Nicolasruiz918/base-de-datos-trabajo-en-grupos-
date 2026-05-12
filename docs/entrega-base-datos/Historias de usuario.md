@@ -1,4 +1,4 @@
-﻿# Historias de Usuario - Sistema de Gestion Hotelera
+# Historias de Usuario - Sistema de Gestion Hotelera
 
 ## Base de datos - PostgreSQL - UUID - Ingles
 
@@ -50,7 +50,8 @@
 | HU-20 | DCL de grants                                                | DCL                 | Must have   |
 | HU-21 | DCL de policies                                              | DCL                 | Should have |
 | HU-22 | TCL y recuperacion manual                                    | TCL                 | Should have |
-| HU-23 | Validacion final y cierre de entrega                         | Validacion          | Must have   |
+| HU-23 | Separacion de documentacion y base de datos en repositorios    | Estructura          | Must have   |
+| HU-24 | Validacion final y cierre de entrega                         | Validacion          | Must have   |
 
 ---
 
@@ -180,6 +181,7 @@ Los ADR registran contexto, decision, alternativas evaluadas y consecuencias. En
 - `docs/entrega-base-datos/ADR/ADR-004-separacion-base-datos-por-dominios.md`.
 - `docs/entrega-base-datos/ADR/ADR-005-docker-compose-liquibase.md`.
 - `docs/entrega-base-datos/ADR/ADR-006-uso-schemas-por-dominio.md`.
+- `docs/entrega-base-datos/ADR/ADR-007-separacion-documentacion-base-datos.md`.
 
 **Criterios de aceptacion**
 
@@ -191,6 +193,7 @@ Los ADR registran contexto, decision, alternativas evaluadas y consecuencias. En
 - La separacion de la base por dominios queda registrada.
 - La implementacion con Docker Compose y Liquibase queda registrada.
 - El uso de schemas PostgreSQL por dominio queda registrado.
+- La separacion entre documentacion y paquete ejecutable de base de datos queda registrada.
 - Los documentos estan en espanol.
 
 **Checklist**
@@ -202,6 +205,7 @@ Los ADR registran contexto, decision, alternativas evaluadas y consecuencias. En
 - [ ] Crear ADR de separacion por dominios.
 - [ ] Crear ADR de Docker Compose con Liquibase.
 - [ ] Crear ADR de schemas por dominio.
+- [ ] Crear ADR de separacion documentacion/base de datos.
 - [ ] Verificar que los ADR no contradigan la estructura real.
 
 **Responsable sugerido:** Nicolas Estid Ruiz Sastoque
@@ -254,8 +258,8 @@ El ambiente debe levantar una base PostgreSQL para `hotel_management`, con healt
 
 **Entregables**
 
-- `entregables/estructura-base-datos/db-structure 1/docker/docker-compose.yml`.
-- `entregables/estructura-base-datos/db-structure 1/liquibase.properties`.
+- `database/docker-compose.yml`.
+- `database/liquibase.properties`.
 - `docs/entrega-base-datos/guia_tecnica_ejecucion.md`.
 
 **Criterios de aceptacion**
@@ -291,12 +295,12 @@ Liquibase debe usar un changelog maestro global y changelogs maestros por bloque
 
 **Entregables**
 
-- `entregables/estructura-base-datos/db-structure 1/changelog/changelog-master.yaml`.
-- `entregables/estructura-base-datos/db-structure 1/01_ddl/changelog-master.yaml`.
-- `entregables/estructura-base-datos/db-structure 1/02_dml/changelog-master.yaml`.
-- `entregables/estructura-base-datos/db-structure 1/03_dcl/changelog-master.yaml`.
-- `entregables/estructura-base-datos/db-structure 1/04_tcl/changelog-master.yaml`.
-- `entregables/estructura-base-datos/db-structure 1/liquibase.properties`.
+- `database/changelog-master.yaml`.
+- `database/01_ddl/changelog-master.yaml`.
+- `database/02_dml/changelog-master.yaml`.
+- `database/03_dcl/changelog-master.yaml`.
+- `database/04_tcl/changelog-master.yaml`.
+- `database/liquibase.properties`.
 
 **Criterios de aceptacion**
 
@@ -308,7 +312,7 @@ Liquibase debe usar un changelog maestro global y changelogs maestros por bloque
 
 **Checklist**
 
-- [ ] Configurar `liquibase.properties`.
+- [ ] Configurar `database/liquibase.properties`.
 - [ ] Crear changelog maestro global.
 - [ ] Crear maestros por bloque.
 - [ ] Referenciar changelogs de carpetas hijas.
@@ -331,10 +335,10 @@ Antes de crear tablas de negocio se deben habilitar extensiones necesarias, crea
 
 **Entregables**
 
-- `01_ddl/00_extensions/001_extensions.sql`.
-- `01_ddl/01_schemas/001_schemas.sql`.
-- `01_ddl/02_types/001_domain_types.sql`.
-- Rollbacks equivalentes en `05_rollbacks/01_ddl`.
+- `database/01_ddl/00_extensions/001_extensions.sql`.
+- `database/01_ddl/01_schemas/001_schemas.sql`.
+- `database/01_ddl/02_types/001_domain_types.sql`.
+- Rollbacks equivalentes en `database/05_rollbacks/01_ddl`.
 
 **Criterios de aceptacion**
 
@@ -370,9 +374,9 @@ Esta historia agrupa los dominios de parametrizacion y seguridad. Parametrizacio
 
 **Entregables**
 
-- `01_ddl/03_tables/001_configuration.sql`.
-- `01_ddl/03_tables/002_security.sql`.
-- `01_ddl/03_tables/changelog.yaml`.
+- `database/01_ddl/03_tables/001_configuration.sql`.
+- `database/01_ddl/03_tables/002_security.sql`.
+- `database/01_ddl/03_tables/changelog.yaml`.
 - Rollbacks de parametrizacion y seguridad.
 
 **Criterios de aceptacion**
@@ -410,9 +414,9 @@ Distribucion representa la estructura fisica del hotel: sedes, habitaciones, tip
 
 **Entregables**
 
-- `01_ddl/03_tables/003_distribution.sql`.
-- `01_ddl/03_tables/004_service_delivery.sql`.
-- `01_ddl/03_tables/changelog.yaml`.
+- `database/01_ddl/03_tables/003_distribution.sql`.
+- `database/01_ddl/03_tables/004_service_delivery.sql`.
+- `database/01_ddl/03_tables/changelog.yaml`.
 - Rollbacks de distribucion y prestacion de servicio.
 
 **Criterios de aceptacion**
@@ -449,9 +453,9 @@ Inventario gestiona proveedores, productos, servicios, stock y disponibilidad. F
 
 **Entregables**
 
-- `01_ddl/03_tables/005_inventory.sql`.
-- `01_ddl/03_tables/006_billing.sql`.
-- `01_ddl/03_tables/changelog.yaml`.
+- `database/01_ddl/03_tables/005_inventory.sql`.
+- `database/01_ddl/03_tables/006_billing.sql`.
+- `database/01_ddl/03_tables/changelog.yaml`.
 - Rollbacks de inventario y facturacion.
 
 **Criterios de aceptacion**
@@ -488,9 +492,9 @@ Notificacion conserva promociones, alertas, terminos y fidelizacion. Mantenimien
 
 **Entregables**
 
-- `01_ddl/03_tables/007_notification.sql`.
-- `01_ddl/03_tables/008_maintenance.sql`.
-- `01_ddl/03_tables/changelog.yaml`.
+- `database/01_ddl/03_tables/007_notification.sql`.
+- `database/01_ddl/03_tables/008_maintenance.sql`.
+- `database/01_ddl/03_tables/changelog.yaml`.
 - Rollbacks de notificacion y mantenimiento.
 
 **Criterios de aceptacion**
@@ -526,9 +530,9 @@ Los objetos de consulta se crean despues de las tablas. Cada view, materialized 
 
 **Entregables**
 
-- `01_ddl/04_views`.
-- `01_ddl/05_materialized_views`.
-- `01_ddl/06_functions`.
+- `database/01_ddl/04_views`.
+- `database/01_ddl/05_materialized_views`.
+- `database/01_ddl/06_functions`.
 - Changelogs y rollbacks de cada carpeta.
 
 **Criterios de aceptacion**
@@ -565,9 +569,9 @@ Los procedures encapsulan procesos como crear reserva, emitir factura, cerrar ma
 
 **Entregables**
 
-- `01_ddl/07_procedures`.
-- `01_ddl/08_triggers`.
-- `01_ddl/09_indexes`.
+- `database/01_ddl/07_procedures`.
+- `database/01_ddl/08_triggers`.
+- `database/01_ddl/09_indexes`.
 - Changelogs y rollbacks de cada carpeta.
 
 **Criterios de aceptacion**
@@ -604,9 +608,9 @@ La carga debe respetar foreign keys y no generar datos huerfanos. Los datos cano
 
 **Entregables**
 
-- `02_dml/00_inserts/001_configuration.sql`.
-- `02_dml/00_inserts/002_security.sql`.
-- `02_dml/00_inserts/changelog.yaml`.
+- `database/02_dml/00_inserts/001_configuration.sql`.
+- `database/02_dml/00_inserts/002_security.sql`.
+- `database/02_dml/00_inserts/changelog.yaml`.
 - Rollbacks de DML correspondientes.
 
 **Criterios de aceptacion**
@@ -642,9 +646,9 @@ Los datos de distribucion dependen de empresa y catalogos previos. Los datos de 
 
 **Entregables**
 
-- `02_dml/00_inserts/003_distribution.sql`.
-- `02_dml/00_inserts/004_service_delivery.sql`.
-- `02_dml/00_inserts/changelog.yaml`.
+- `database/02_dml/00_inserts/003_distribution.sql`.
+- `database/02_dml/00_inserts/004_service_delivery.sql`.
+- `database/02_dml/00_inserts/changelog.yaml`.
 - Rollbacks de DML correspondientes.
 
 **Criterios de aceptacion**
@@ -682,9 +686,9 @@ La carga de inventario debe ocurrir antes de consumos o facturacion. La facturac
 
 **Entregables**
 
-- `02_dml/00_inserts/005_inventory.sql`.
-- `02_dml/00_inserts/006_billing.sql`.
-- `02_dml/00_inserts/changelog.yaml`.
+- `database/02_dml/00_inserts/005_inventory.sql`.
+- `database/02_dml/00_inserts/006_billing.sql`.
+- `database/02_dml/00_inserts/changelog.yaml`.
 - Rollbacks de DML correspondientes.
 
 **Criterios de aceptacion**
@@ -721,9 +725,9 @@ Los datos de notificacion dependen de clientes o reservas existentes cuando haya
 
 **Entregables**
 
-- `02_dml/00_inserts/007_notification.sql`.
-- `02_dml/00_inserts/008_maintenance.sql`.
-- `02_dml/00_inserts/changelog.yaml`.
+- `database/02_dml/00_inserts/007_notification.sql`.
+- `database/02_dml/00_inserts/008_maintenance.sql`.
+- `database/02_dml/00_inserts/changelog.yaml`.
 - Rollbacks de DML correspondientes.
 
 **Criterios de aceptacion**
@@ -760,8 +764,8 @@ La seguridad debe diferenciar roles de base y usuario controlado. El usuario `ar
 
 **Entregables**
 
-- `03_dcl/00_roles/001_roles.sql`.
-- `03_dcl/00_roles/changelog.yaml`.
+- `database/03_dcl/00_roles/001_roles.sql`.
+- `database/03_dcl/00_roles/changelog.yaml`.
 - Rollback de roles.
 
 **Criterios de aceptacion**
@@ -797,8 +801,8 @@ Los grants deben permitir DDL y DML donde corresponda, sin habilitar operaciones
 
 **Entregables**
 
-- `03_dcl/01_grants/001_grants.sql`.
-- `03_dcl/01_grants/changelog.yaml`.
+- `database/03_dcl/01_grants/001_grants.sql`.
+- `database/03_dcl/01_grants/changelog.yaml`.
 - Rollback de grants.
 
 **Criterios de aceptacion**
@@ -833,8 +837,8 @@ Las policies permiten dejar una base para Row Level Security o reglas de acceso 
 
 **Entregables**
 
-- `03_dcl/02_policies/001_rls_policies.sql`.
-- `03_dcl/02_policies/changelog.yaml`.
+- `database/03_dcl/02_policies/001_rls_policies.sql`.
+- `database/03_dcl/02_policies/changelog.yaml`.
 - Rollback de policies.
 
 **Criterios de aceptacion**
@@ -869,9 +873,9 @@ Los scripts TCL agrupan operaciones que deben comportarse como una unidad. Tambi
 
 **Entregables**
 
-- `04_tcl/00_transaction_blocks`.
-- `04_tcl/01_manual_recovery`.
-- `04_tcl/changelog-master.yaml`.
+- `database/04_tcl/00_transaction_blocks`.
+- `database/04_tcl/01_manual_recovery`.
+- `database/04_tcl/changelog-master.yaml`.
 - Rollbacks de TCL si aplican.
 
 **Criterios de aceptacion**
@@ -896,19 +900,62 @@ Los scripts TCL agrupan operaciones que deben comportarse como una unidad. Tambi
 
 ---
 
-## HU-23 - Validacion final y cierre de entrega
+## HU-23 - Separacion de documentacion y base de datos en repositorios
+
+**Como** equipo de desarrollo, **quiero** separar la documentacion y la base de datos como entregables preparados para repositorios diferentes, **para** que los documentos del proyecto no se mezclen con los scripts ejecutables de base de datos.
+
+**Descripcion**
+
+La entrega debe quedar lista para dividirse en dos repositorios: uno de documentacion y uno de base de datos. El repositorio de documentacion conserva HU, ADR, plan, seguimiento, matriz, tablero y guias. El repositorio de base de datos conserva DDL, DML, DCL, TCL, rollbacks, changelogs, Docker, Liquibase y scripts de validacion.
+
+La estructura local mantiene `docs/` y `database/` como frontera clara para facilitar la separacion. No se modifica `docs/planning` ni `docs/architecture`.
+
+**Entregables**
+
+- `docs/entrega-base-datos/ADR/ADR-007-separacion-documentacion-base-datos.md`.
+- Carpeta `docs/` como base del repositorio de documentacion.
+- Carpeta `database/` como base del repositorio de base de datos.
+- README actualizado con la separacion por repositorios.
+- Plan de subida por HU actualizado con rutas documentales y rutas de base de datos.
+
+**Criterios de aceptacion**
+
+- La documentacion queda ubicada bajo `docs/`.
+- La base de datos ejecutable queda ubicada bajo `database/`.
+- El ADR-007 explica que `docs` y `database` se administran como repositorios separados.
+- El plan de subida por HU diferencia archivos documentales y archivos SQL.
+- No se agregan documentos de entrega dentro de `database/`.
+- `docs/planning` y `docs/architecture` se mantienen sin cambios.
+
+**Checklist**
+
+- [ ] Crear o actualizar ADR-007.
+- [ ] Confirmar que los documentos viven en `docs/`.
+- [ ] Confirmar que los scripts ejecutables viven en `database/`.
+- [ ] Actualizar README y guia tecnica.
+- [ ] Actualizar tablero y plan de subida por HU.
+- [ ] Dejar listo el criterio para subir cada bloque a su repositorio correspondiente.
+
+**Responsable sugerido:** Nicolas Estid Ruiz Sastoque
+
+**Priorizacion MoSCoW:** Must have
+
+---
+
+## HU-24 - Validacion final y cierre de entrega
 
 **Como** QA del proyecto, **quiero** validar la ejecucion completa de la base de datos y la documentacion, **para** confirmar que la entrega queda lista y estable en `main`.
 
 **Descripcion**
 
-La validacion final ejecuta Docker, Liquibase y smoke test sobre una base limpia. Tambien revisa que documentos, changelogs, rollbacks, DDL, DML, DCL y TCL esten alineados.
+La validacion final ejecuta Docker, Liquibase y smoke test sobre una base limpia. Tambien revisa que documentos, changelogs, rollbacks, DDL, DML, DCL y TCL esten alineados, y que la separacion entre repositorio de documentacion y repositorio de base de datos sea coherente.
 
 **Entregables**
 
-- `entregables/estructura-base-datos/db-structure 1/scripts/smoke-test.sql`.
+- `database/scripts/smoke-test.sql`.
 - `docs/entrega-base-datos/guia_tecnica_ejecucion.md`.
 - Evidencia de ejecucion de Liquibase y smoke test.
+- Revision final de separacion `docs` / `database`.
 
 **Criterios de aceptacion**
 
@@ -917,6 +964,7 @@ La validacion final ejecuta Docker, Liquibase y smoke test sobre una base limpia
 - El smoke test retorna conteos esperados.
 - Las foreign keys existen y no permiten datos huerfanos.
 - La documentacion no contradice la estructura del entregable.
+- La separacion por repositorios queda explicada en ADR y HU.
 - La rama `main` queda como version estable.
 
 **Checklist**
@@ -927,6 +975,7 @@ La validacion final ejecuta Docker, Liquibase y smoke test sobre una base limpia
 - [ ] Validar cantidad de schemas y tablas.
 - [ ] Validar foreign keys.
 - [ ] Revisar README, HU, ADR y guia de ejecucion.
+- [ ] Revisar separacion `docs` / `database`.
 - [ ] Preparar PR final hacia `main`.
 
 **Responsable sugerido:** Emily Sharith Amezquita Saavedra

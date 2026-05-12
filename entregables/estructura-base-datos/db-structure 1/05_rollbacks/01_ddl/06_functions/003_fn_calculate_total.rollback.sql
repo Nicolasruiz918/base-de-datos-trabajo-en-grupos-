@@ -1,3 +1,0 @@
-﻿DROP FUNCTION IF EXISTS billing.fn_calculate_total(NUMERIC, NUMERIC, NUMERIC);
-
-

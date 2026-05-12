@@ -56,7 +56,7 @@ La entrega no crea un noveno dominio tecnico. La configuracion compartida debe r
 | Schemas | Un schema por dominio funcional. |
 | Changelogs | Maestro global y maestros por DDL, DML, DCL y TCL. |
 | Ejecucion local | `docker compose up liquibase` como camino recomendado. |
-| Ejecucion alternativa | `psql` usando `changelog/changelog-master.sql`. |
+| Ejecucion alternativa | `psql` usando `database/changelog-master.sql`. |
 | Rollbacks | Estructura espejo en `05_rollbacks`. |
 
 ## Consecuencias
@@ -68,8 +68,8 @@ La entrega no crea un noveno dominio tecnico. La configuracion compartida debe r
 - Cada function vive en archivo separado.
 - Cada procedure vive en archivo separado.
 - Cada trigger vive en archivo separado.
-- Liquibase debe apuntar a `changelog/changelog-master.yaml`.
-- `psql` puede ejecutar `changelog/changelog-master.sql`.
+- Liquibase debe apuntar a `database/changelog-master.yaml`.
+- `psql` puede ejecutar `database/changelog-master.sql`.
 - El usuario `ariel5253` puede autenticarse, pero no hereda `administrador`.
 
 ## Reglas de validacion
@@ -96,6 +96,7 @@ Esta decision afecta:
 - `03_dcl`
 - `04_tcl`
 - `05_rollbacks`
-- `docker/docker-compose.yml`
+- `database/docker-compose.yml`
 - `liquibase.properties`
 - `docs/entrega-base-datos`
+

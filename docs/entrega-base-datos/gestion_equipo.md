@@ -57,10 +57,10 @@ La base de datos debe quedar alineada con estas decisiones:
 
 | Responsable                      | Historias asignadas                             |
 | -------------------------------- | ----------------------------------------------- |
-| Nicolas Estid Ruiz Sastoque      | HU-04, HU-06, HU-07, HU-09, HU-19, HU-20, HU-22 |
+| Nicolas Estid Ruiz Sastoque      | HU-04, HU-06, HU-07, HU-09, HU-19, HU-20, HU-22, HU-23 |
 | Frenier Steven Cardona Perez     | HU-11, HU-12, HU-15, HU-17, HU-18, HU-21        |
 | Brayan Perdomo                   | HU-01, HU-02, HU-03, HU-10, HU-16               |
-| Emily Sharith Amezquita Saavedra | HU-05, HU-08, HU-13, HU-14, HU-23               |
+| Emily Sharith Amezquita Saavedra | HU-05, HU-08, HU-13, HU-14, HU-24               |
 
 ## Evidencias esperadas
 
@@ -81,3 +81,5 @@ La base de datos debe quedar alineada con estas decisiones:
 - `Historias de usuario.md`: se mantiene separado porque es el backlog tecnico principal.
 - `analisis_dominios.md`: se mantiene separado porque es evidencia de analisis.
 - `ADR/`: se mantiene separado porque contiene decisiones tecnicas formales.
+
+

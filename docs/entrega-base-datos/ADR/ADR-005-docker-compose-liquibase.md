@@ -27,7 +27,7 @@ Se implementa un ambiente con Docker Compose que levanta dos servicios:
 | Servicio | Imagen | Responsabilidad |
 |----------|--------|-----------------|
 | `postgres` | `postgres:16` | Crear y exponer la base `hotel_management`. |
-| `liquibase` | `liquibase/liquibase:4.25` | Ejecutar `changelog/changelog-master.yaml` contra PostgreSQL. |
+| `liquibase` | `liquibase/liquibase:4.25` | Ejecutar `database/changelog-master.yaml` contra PostgreSQL. |
 
 La configuracion de Liquibase queda centralizada en `liquibase.properties`.
 
@@ -40,7 +40,7 @@ La configuracion de Liquibase queda centralizada en `liquibase.properties`.
 | Password administrador | `admin123` |
 | Puerto local | `25432` |
 | Driver | `org.postgresql.Driver` |
-| Changelog maestro | `changelog/changelog-master.yaml` |
+| Changelog maestro | `database/changelog-master.yaml` |
 | Contenedor PostgreSQL | `hotel_management_postgres` |
 | Contenedor Liquibase | `hotel_management_liquibase` |
 
@@ -50,9 +50,9 @@ El servicio `liquibase` depende del healthcheck de `postgres`. Esto evita que Li
 
 La decision se refleja en:
 
-- `docker/docker-compose.yml`
+- `database/docker-compose.yml`
 - `liquibase.properties`
-- `changelog/changelog-master.yaml`
+- `database/changelog-master.yaml`
 - Changelogs maestros de `01_ddl`, `02_dml`, `03_dcl` y `04_tcl`
 - `scripts/smoke-test.sql`
 
@@ -102,3 +102,4 @@ La ejecucion validada dejo:
 - 55 foreign keys registradas.
 - 0 foreign keys sin validar.
 - Usuario `ariel5253` cargado en `security.user_account`.
+

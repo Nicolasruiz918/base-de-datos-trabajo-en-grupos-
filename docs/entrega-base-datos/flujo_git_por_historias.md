@@ -1,4 +1,4 @@
-# Flujo Git por historias de usuario
+﻿# Flujo Git por historias de usuario
 
 ## Objetivo
 
@@ -95,7 +95,7 @@ Subir cambios:
 
 ```bash
 git status
-git add docs/entrega-base-datos entregables/estructura-base-datos
+git add docs/entrega-base-datos database
 git commit -m "feat: implement hu-09 parametrizacion and security"
 git push origin hu/HU-09-parametrizacion-seguridad
 ```
@@ -103,7 +103,7 @@ git push origin hu/HU-09-parametrizacion-seguridad
 Validar base de datos antes del PR:
 
 ```bash
-cd "entregables/estructura-base-datos/db-structure 1/docker"
+cd "database"
 docker-compose down -v
 docker-compose up --abort-on-container-exit liquibase
 docker-compose exec postgres psql -U admin -d hotel_management -f /scripts/smoke-test.sql
@@ -141,3 +141,5 @@ HU-XX - Nombre de la historia
 ## Recomendacion final
 
 Para esta entrega, el orden mas seguro es usar las HU tecnicas como unidad de subida al repositorio. Asi se mantiene el orden de dependencias y no se rompe la ejecucion de foreign keys.
+
+

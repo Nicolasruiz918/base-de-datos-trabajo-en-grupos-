@@ -6,8 +6,8 @@ Entrega organizada para PostgreSQL con 8 dominios oficiales.
 
 - Motor objetivo: PostgreSQL 16
 - Base de datos: `hotel_management`
-- Changelog maestro SQL: `changelog/changelog-master.sql`
-- Changelog maestro Liquibase: `changelog/changelog-master.yaml`
+- Changelog maestro SQL: `database/changelog-master.sql`
+- Changelog maestro Liquibase: `database/changelog-master.yaml`
 - Usuario de autenticacion del sistema: `ariel5253`
 - Password de autenticacion del sistema: `ariel5253`
 - El usuario `ariel5253` no hereda el rol `administrador`; usa permisos controlados.
@@ -25,13 +25,21 @@ Entrega organizada para PostgreSQL con 8 dominios oficiales.
 | `flujo_git_por_historias.md`       | Guia para subir el proyecto por HU, ramas, commits, PRs y promocion `dev -> qa -> main`. |
 | `matriz_trazabilidad_hu.md`        | Relacion entre HU tecnicas, dominios, entregables y dependencias.                          |
 | `dor_dod.md`                       | Definition of Ready y Definition of Done.                                                  |
-| `ADR/`                             | Decisiones tecnicas importantes: PostgreSQL, UUID/auditoria/eliminacion e idioma tecnico.  |
+| `ADR/`                             | Decisiones tecnicas importantes: PostgreSQL, UUID/auditoria/eliminacion, idioma tecnico y separacion de documentacion y base de datos en repositorios diferentes. |
 | `tablero_azure_trello_clickup.csv` | Tablero importable con HU tecnicas.                                                        |
 | `plan_subida_hu_tecnicas.csv`      | Orden sugerido de ramas, archivos y validaciones por HU.                                   |
 
+
+## Estructura raiz
+
+| Ruta | Uso |
+|------|-----|
+| `database/` | Paquete ejecutable de base de datos, preparado para repositorio independiente. |
+| `docs/entrega-base-datos/` | Documentacion propia de la entrega, preparada para repositorio independiente de documentacion. |
+| `docs/planning/` y `docs/architecture/` | Documentacion existente de referencia, sin cambios para esta entrega. |
 ## Ejecucion rapida
 
-Desde `entregables/estructura-base-datos/db-structure 1/docker`:
+Desde `database`:
 
 ```bash
 docker-compose down -v
@@ -61,10 +69,15 @@ docker-compose exec postgres psql -U admin -d hotel_management -f /scripts/smoke
 
 ## Changelogs maestros por bloque
 
-- `01_ddl/changelog-master.yaml`
-- `02_dml/changelog-master.yaml`
-- `03_dcl/changelog-master.yaml`
-- `04_tcl/changelog-master.yaml`
+- `database/01_ddl/changelog-master.yaml`
+- `database/02_dml/changelog-master.yaml`
+- `database/03_dcl/changelog-master.yaml`
+- `database/04_tcl/changelog-master.yaml`
 
-El maestro global `changelog/changelog-master.yaml` incluye los cuatro maestros anteriores.
+El maestro global `database/changelog-master.yaml` incluye los cuatro maestros anteriores.
+
+
+
+
+
 

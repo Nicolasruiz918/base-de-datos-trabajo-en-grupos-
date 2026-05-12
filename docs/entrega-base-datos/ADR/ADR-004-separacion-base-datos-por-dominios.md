@@ -54,7 +54,7 @@ La decision se implementa en:
 - `01_ddl/03_tables`: tablas separadas por dominio.
 - `02_dml/00_inserts`: datos iniciales separados por dominio.
 - `05_rollbacks`: estructura espejo para revertir cambios.
-- `changelog/changelog-master.yaml`: orden global de ejecucion.
+- `database/changelog-master.yaml`: orden global de ejecucion.
 - `docs/entrega-base-datos/analisis_dominios.md`: explicacion funcional y tablas relacionadas.
 
 El orden de carga respeta dependencias. Por ejemplo, `configuration` y `security` se crean antes de dominios que dependen de personas, empleados, usuarios, metodos de pago o datos maestros. Luego se ejecutan `distribution`, `service_delivery`, `inventory`, `billing`, `notification` y `maintenance`.
@@ -84,3 +84,4 @@ Para aceptar esta decision:
 - ADR-001 define PostgreSQL como motor objetivo.
 - ADR-003 define que los nombres tecnicos de la base van en ingles.
 - ADR-006 define que cada dominio se representa mediante un schema PostgreSQL.
+
